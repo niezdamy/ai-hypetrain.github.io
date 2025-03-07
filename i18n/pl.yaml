@@ -1,0 +1,72 @@
+toggleMenu:
+    other: Przełącz Menu
+  
+darkMode:
+    other: Tryb Ciemny
+
+list:
+    showMorePosts:
+        other: Więcej postów
+    
+    emptyPosts:
+        other: Nie znaleziono postów
+        
+article:
+    back:
+        other: Wróć
+    
+    tableOfContents:
+        other: Spis treści
+    
+    relatedContents:
+        other: Podobne treści
+    
+    lastUpdatedOn:
+        other: Ostatnia aktualizacja
+    
+    readingTime:
+        one: "{{ .Count }} minuta"
+        other: "{{ .Count }} minut"
+
+notFound:
+    title:
+        other: Nie znaleziono
+    
+    subtitle:
+        other: Strona której szukasz nie istnieje
+
+widget:
+    archives:
+        title:
+            other: Archiwa
+        more:
+            other: Więcej
+    
+    tagCloud:
+        title:
+            other: Chmura tagów
+    
+    categoriesCloud:
+        title:
+            other: Kategorie
+    
+    costs-summary:
+        title:
+            other: Podsumowanie Kosztów
+    
+search:
+    title:
+        other: Wyszukiwanie
+    
+    placeholder:
+        other: Wpisz coś...
+    
+    resultTitle:
+        other: "#PAGES_COUNT stron (#TIME_SECONDS sekund)"
+
+footer:
+    builtWith:
+        other: Zbudowane z {{ .Generator }}
+    
+    designedBy:
+        other: Motyw {{ .Theme }} zaprojektowany przez {{ .DesignedBy }}

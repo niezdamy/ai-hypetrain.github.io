@@ -1,0 +1,49 @@
+{{ $context := .Context }}
+
+<div class="widget costs-summary">
+    <h2 class="widget-title">{{ T "widget.costs-summary.title" | default .Params.title | default "Costs Summary" }}</h2>
+    
+    <div class="costs-content">
+        <div class="cost-item">
+            <span class="cost-label">{{ if eq $context.Site.Language.Lang "pl" }}Poświęcony czas:{{ else }}Time spent:{{ end }}</span>
+            <span class="cost-value">{{ default "0 hours" .Params.timeSpent }}</span>
+        </div>
+        <div class="cost-item">
+            <span class="cost-label">{{ if eq $context.Site.Language.Lang "pl" }}Wydane pieniądze:{{ else }}Money spent:{{ end }}</span>
+            <span class="cost-value">{{ default "$0" .Params.moneySpent }}</span>
+        </div>
+        <div class="cost-item">
+            <span class="cost-label">{{ if eq $context.Site.Language.Lang "pl" }}Zarobione pieniądze:{{ else }}Money earned:{{ end }}</span>
+            <span class="cost-value">{{ default "$0" .Params.moneyEarned }}</span>
+        </div>
+    </div>
+</div>
+
+<style>
+.costs-content {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-l1);
+}
+
+.cost-item {
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cost-item:last-child {
+    margin-bottom: 0;
+}
+
+.cost-label {
+    font-weight: 600;
+}
+
+.cost-value {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+</style>

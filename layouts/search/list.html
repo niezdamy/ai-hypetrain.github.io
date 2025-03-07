@@ -1,0 +1,123 @@
+{{ define "main" }}
+    <h1 class="article-title">{{ T "search.title" }}</h1>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="{{ T "search.placeholder" }}" autofocus>
+        <div id="searchResults"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var searchInput = document.getElementById('searchInput');
+            var searchResults = document.getElementById('searchResults');
+            
+            searchInput.addEventListener('keyup', function () {
+                var query = searchInput.value.toLowerCase();
+                
+                if (query.length < 2) {
+                    searchResults.innerHTML = '';
+                    return;
+                }
+                
+                fetch('/index.json').catch(function() {
+                    return fetch('/search-index.json')
+                }).catch(function() {
+                    return fetch('/' + window.location.pathname.split('/')[1] + '/index.json')
+                })
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        var results = [];
+                        var items = [];
+                        
+                        try {
+                            if (data.items) {
+                                items = data.items;
+                            } else if (Array.isArray(data)) {
+                                items = data;
+                            }
+                            
+                            for (var i = 0; i < items.length; i++) {
+                                var item = items[i];
+                                var title = (item.title || '').toLowerCase();
+                                var content = '';
+                                
+                                if (item.content_html) {
+                                    content = item.content_html.toLowerCase();
+                                } else if (item.content) {
+                                    content = item.content.toLowerCase();
+                                } else if (item.summary) {
+                                    content = item.summary.toLowerCase();
+                                }
+                                
+                                if (title.includes(query) || content.includes(query)) {
+                                    results.push(item);
+                                }
+                            }
+                        } catch (e) {
+                            console.error('Error processing search data:', e);
+                            searchResults.innerHTML = '<p>Error processing search results.</p>';
+                            return;
+                        }
+                        
+                        searchResults.innerHTML = '';
+                        
+                        if (results.length === 0) {
+                            searchResults.innerHTML = '<p>No results found.</p>';
+                            return;
+                        }
+                        
+                        var resultHtml = '<p>' + results.length + ' results found:</p><ul>';
+                        
+                        for (var j = 0; j < results.length; j++) {
+                            var result = results[j];
+                            resultHtml += '<li><a href="' + result.url + '">' + result.title + '</a></li>';
+                        }
+                        
+                        resultHtml += '</ul>';
+                        searchResults.innerHTML = resultHtml;
+                    });
+            });
+        };
+    </script>
+
+    <style>
+        .search-container {
+            margin: 2rem 0;
+        }
+        
+        #searchInput {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            border: 1px solid var(--card-border-color);
+            border-radius: var(--card-border-radius);
+            background-color: var(--card-background);
+            color: var(--card-text-color-main);
+        }
+        
+        #searchResults {
+            margin-top: 1.5rem;
+        }
+        
+        #searchResults ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #searchResults li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: var(--card-border-radius);
+            background-color: var(--card-background);
+            box-shadow: var(--shadow-l1);
+        }
+        
+        #searchResults a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+    </style>
+{{ end }}

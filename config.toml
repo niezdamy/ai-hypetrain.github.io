@@ -1,0 +1,96 @@
+baseURL = "https://ai-hypetrain.github.io/"
+languageCode = "en-us"
+title = "ai-hypetrain"
+theme = "hugo-theme-stack"
+# GA4 Measurement ID
+googleAnalytics = "G-XXXXXXXXXX"
+defaultContentLanguage = "en"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON", "SearchIndex"]
+
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
+[pagination]
+  pagerSize = 5
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "ai-hypetrain"
+    weight = 1
+    [languages.en.params]
+      description = "Testing AI tools and ideas - what's worth the hype?"
+  
+  [languages.pl]
+    languageName = "Polish"
+    title = "ai-hypetrain"
+    weight = 2
+    [languages.pl.params]
+      description = "Testowanie narzędzi AI i pomysłów - co jest warte szumu?"
+
+[params]
+  mainSections = ["post"]
+  featuredImageField = "image"
+  rssFullContent = true
+  favicon = "/favicon.png"
+  mainPageMetrics = true
+  
+  [params.footer]
+    since = 2025
+
+  [params.dateFormat]
+    published = "Jan 02, 2006"
+    lastUpdated = "Jan 02, 2006 15:04 MST"
+    
+  [params.sidebar]
+    emoji = "🔍"
+    subtitle = "Testing AI tools and seeing what's actually worth the hype"
+    avatar = { enabled = true, local = true, src = "img/avatar.png" }
+
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+    
+  [params.widgets]
+    homepage = [
+      { type = "costs-summary", params = { title = "Costs Summary", timeSpent = "42 hours", moneySpent = "$180", moneyEarned = "$350" } },
+      { type = "search" },
+      { type = "archives" },
+      { type = "categories" },
+      { type = "tag-cloud" }
+    ]
+    page = [
+      { type = "toc" }
+    ]
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+    [menu.main.params]
+      newTab = false
+      icon = "home"
+      
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives"
+    weight = 20
+    [menu.main.params]
+      icon = "archives"
+
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search"
+    weight = 30
+    [menu.main.params]
+      icon = "search"
