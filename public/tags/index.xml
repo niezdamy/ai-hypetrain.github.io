@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on ai-hypetrain</title>
+        <link>http://localhost:55072/tags/</link>
+        <description>Recent content in Tags on ai-hypetrain</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:55072/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>http://localhost:55072/tags/about/</link>
+        <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:55072/tags/about/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ai</title>
+        <link>http://localhost:55072/tags/ai/</link>
+        <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:55072/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>O Nas</title>
+        <link>http://localhost:55072/tags/o-nas/</link>
+        <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:55072/tags/o-nas/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Powitanie</title>
+        <link>http://localhost:55072/tags/powitanie/</link>
+        <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:55072/tags/powitanie/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Welcome</title>
+        <link>http://localhost:55072/tags/welcome/</link>
+        <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:55072/tags/welcome/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

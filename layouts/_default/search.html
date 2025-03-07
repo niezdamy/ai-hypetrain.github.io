@@ -1,0 +1,187 @@
+{{ define "main" }}
+    <header class="page-header">
+        <h1 class="search-title">{{ T "search.title" | default "Search" }}</h1>
+    </header>
+
+    <div class="search-page">
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="{{ T "search.placeholder" }}" autofocus>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                var searchInput = document.getElementById('searchInput');
+                var searchResults = document.getElementById('searchResults');
+                
+                searchInput.addEventListener('keyup', function () {
+                    var query = searchInput.value.toLowerCase();
+                    
+                    if (query.length < 2) {
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+                    
+                    fetch('/search-index.json')
+                        .catch(function() {
+                            return fetch('/index.json');
+                        })
+                        .then(function (response) {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(function (data) {
+                            var items = [];
+                            var results = [];
+                            
+                            if (data.items) {
+                                items = data.items;
+                            } else if (Array.isArray(data)) {
+                                items = data;
+                            }
+                            
+                            var currentLang = document.documentElement.lang || '{{ .Site.Language.Lang }}';
+                            
+                            for (var i = 0; i < items.length; i++) {
+                                var item = items[i];
+                                var itemLang = item.language || '';
+                                
+                                // Only include results in current language
+                                if (itemLang && itemLang !== currentLang) {
+                                    continue;
+                                }
+                                
+                                var title = (item.title || '').toLowerCase();
+                                var content = '';
+                                
+                                if (item.content_html) {
+                                    content = item.content_html.toLowerCase();
+                                } else if (item.content) {
+                                    content = item.content.toLowerCase();
+                                } else if (item.summary) {
+                                    content = item.summary.toLowerCase();
+                                }
+                                
+                                if (title.includes(query) || content.includes(query)) {
+                                    results.push(item);
+                                }
+                            }
+                            
+                            searchResults.innerHTML = '';
+                            
+                            if (results.length === 0) {
+                                searchResults.innerHTML = '<p class="no-results">{{ T "search.noResults" | default "No results found." }}</p>';
+                                return;
+                            }
+                            
+                            var resultTime = performance.now() / 1000;
+                            var resultTitle = '{{ T "search.resultTitle" | default "#PAGES_COUNT pages (#TIME_SECONDS seconds)" }}';
+                            resultTitle = resultTitle.replace('#PAGES_COUNT', results.length);
+                            resultTitle = resultTitle.replace('#TIME_SECONDS', resultTime.toFixed(2));
+                            
+                            var resultHtml = '<p class="search-info">' + resultTitle + '</p>';
+                            resultHtml += '<ul class="search-results-list">';
+                            
+                            for (var j = 0; j < results.length; j++) {
+                                var result = results[j];
+                                var url = result.permalink || result.url || '';
+                                resultHtml += '<li class="search-results-item">';
+                                resultHtml += '<a href="' + url + '" class="search-results-link">';
+                                resultHtml += '<h2 class="search-results-title">' + result.title + '</h2>';
+                                
+                                var summary = result.summary || '';
+                                if (summary) {
+                                    resultHtml += '<div class="search-results-summary">' + summary + '</div>';
+                                }
+                                
+                                resultHtml += '</a></li>';
+                            }
+                            
+                            resultHtml += '</ul>';
+                            searchResults.innerHTML = resultHtml;
+                        })
+                        .catch(function (error) {
+                            console.error('Error searching:', error);
+                            searchResults.innerHTML = '<p class="error-message">Error: ' + error.message + '</p>';
+                        });
+                });
+            });
+        </script>
+
+        <style>
+            .search-container {
+                margin: 2rem 0;
+            }
+            
+            #searchInput {
+                width: 100%;
+                padding: 0.75rem;
+                font-size: 1.1rem;
+                border: 1px solid var(--card-border-color);
+                border-radius: var(--card-border-radius);
+                background-color: var(--card-background);
+                color: var(--card-text-color-main);
+            }
+            
+            .search-results {
+                margin-top: 1.5rem;
+            }
+            
+            .search-info {
+                margin-bottom: 1rem;
+                color: var(--card-text-color-secondary);
+            }
+            
+            .search-results-list {
+                list-style-type: none;
+                padding: 0;
+            }
+            
+            .search-results-item {
+                margin-bottom: 1.5rem;
+            }
+            
+            .search-results-link {
+                display: block;
+                text-decoration: none;
+                padding: 1.25rem;
+                border-radius: var(--card-border-radius);
+                background-color: var(--card-background);
+                box-shadow: var(--shadow-l1);
+                transition: transform 0.3s ease;
+            }
+            
+            .search-results-link:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--shadow-l2);
+            }
+            
+            .search-results-title {
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+                color: var(--accent-color);
+            }
+            
+            .search-results-summary {
+                color: var(--card-text-color-main);
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            .no-results, .error-message {
+                padding: 1rem;
+                text-align: center;
+                color: var(--card-text-color-main);
+            }
+            
+            .error-message {
+                color: #e53935;
+            }
+        </style>
+    </div>
+{{ end }}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Wprowadzenie on ai-hypetrain</title>
+        <link>http://localhost:55072/categories/wprowadzenie/</link>
+        <description>Recent content in Wprowadzenie on ai-hypetrain</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:55072/categories/wprowadzenie/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Witaj w ai-hypetrain - pierwszy post</title>
+        <link>http://localhost:55072/pl/post/first-post/</link>
+        <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:55072/pl/post/first-post/</guid>
+        <description>&lt;img src="http://localhost:55072/img/first-post-cover.jpg" alt="Featured image of post Witaj w ai-hypetrain - pierwszy post" /&gt;&lt;p&gt;Witajcie! To jest pierwszy post na blogu &lt;strong&gt;ai-hypetrain&lt;/strong&gt;. Naszym celem jest testowanie różnych narzędzi AI oraz pomysłów, które oceniamy pod kątem ich przydatności i opłacalności. Na stronie głównej znajdziecie komponent pokazujący, ile czasu poświęciliśmy, ile pieniędzy wydaliśmy oraz ile zarobiliśmy.&lt;/p&gt;
+&lt;p&gt;W przyszłości planujemy publikacje o następujących tematach:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Recenzje narzędzi AI&lt;/li&gt;
+&lt;li&gt;Analizy trendów w technologii AI&lt;/li&gt;
+&lt;li&gt;Case studies oraz przykłady wdrożeń&lt;/li&gt;
+&lt;li&gt;Porady dotyczące wykorzystania AI w biznesie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Zapraszamy do śledzenia naszych testów i dzielenia się opiniami!&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

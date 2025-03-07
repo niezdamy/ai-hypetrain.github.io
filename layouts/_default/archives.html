@@ -1,0 +1,91 @@
+{{ define "main" }}
+    <header class="page-header">
+        <h1 class="archive-title">{{ T "archives.title" | default .Title }}</h1>
+    </header>
+
+    <div class="archives-container">
+
+        {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+        {{ $languagePages := where $notHidden "Language.Lang" .Page.Language.Lang }}
+        {{ $filtered := ($pages | intersect $languagePages) }}
+
+        {{ range $filtered.GroupByDate "2006" }}
+            <div class="archives-group">
+                <h2 class="archives-date">{{ .Key }}</h2>
+                <div class="archives-posts">
+                    {{ range .Pages.GroupByDate "January" }}
+                        <div class="archives-month">
+                            <h3 class="archives-month-header">{{ .Key }}</h3>
+                            <div class="archives-month-posts">
+                                {{ range .Pages }}
+                                    <div class="archives-post">
+                                        <span class="archives-post-date">{{ .Date.Format "02" }}</span>
+                                        <a class="archives-post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        {{ end }}
+
+        <style>
+            .archives-group {
+                margin-bottom: 3rem;
+            }
+            
+            .archives-date {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid var(--border-color);
+                color: var(--accent-color);
+            }
+            
+            .archives-month {
+                margin-bottom: 1.5rem;
+            }
+            
+            .archives-month-header {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                color: var(--card-text-color-main);
+            }
+            
+            .archives-posts {
+                margin-left: 1rem;
+            }
+            
+            .archives-month-posts {
+                margin-left: 1rem;
+            }
+            
+            .archives-post {
+                margin-bottom: 0.8rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            .archives-post-date {
+                min-width: 30px;
+                color: var(--card-text-color-secondary);
+                font-size: 0.95rem;
+                margin-right: 1rem;
+            }
+            
+            .archives-post-title {
+                text-decoration: none;
+                color: var(--card-text-color-main);
+                font-weight: 500;
+                transition: color 0.2s ease;
+            }
+            
+            .archives-post-title:hover {
+                color: var(--accent-color);
+                text-decoration: underline;
+            }
+        </style>
+    </div>
+{{ end }}

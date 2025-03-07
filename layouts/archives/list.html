@@ -1,0 +1,61 @@
+{{ define "main" }}
+    <h1 class="article-title">{{ .Title }}</h1>
+
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    
+    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+    {{ $languagePages := where $notHidden "Language.Lang" .Page.Language.Lang }}
+    {{ $filtered := ($pages | intersect $languagePages) }}
+
+    {{ range $filtered.GroupByDate "2006" }}
+        <div class="archives-group">
+            <h2 class="archives-date">{{ .Key }}</h2>
+            <div class="archives-posts">
+                {{ range .Pages }}
+                    <div class="archives-post">
+                        <span class="archives-post-date">{{ .Date.Format (or $.Site.Params.dateFormat.published "Jan 02") }}</span>
+                        <a class="archives-post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    {{ end }}
+
+    <style>
+        .archives-group {
+            margin-bottom: 2rem;
+        }
+        
+        .archives-date {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .archives-posts {
+            margin-left: 1rem;
+        }
+        
+        .archives-post {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .archives-post-date {
+            min-width: 100px;
+            color: var(--card-text-color-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .archives-post-title {
+            text-decoration: none;
+            color: var(--card-text-color-main);
+            font-weight: 500;
+        }
+        
+        .archives-post-title:hover {
+            color: var(--accent-color);
+        }
+    </style>
+{{ end }}

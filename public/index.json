@@ -1,0 +1,7 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "ai-hypetrain",
+    "home_page_url": "http://localhost:55072/",
+    "feed_url": "http://localhost:55072/",
+    "items": []
+}
