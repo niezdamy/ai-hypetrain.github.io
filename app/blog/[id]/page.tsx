@@ -12,6 +12,15 @@ interface BlogPostPageProps {
   }
 }
 
+export async function generateStaticParams() {
+  // Define all possible blog post IDs that should be pre-rendered
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' }
+  ]
+}
+
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const postId = Number.parseInt(params.id)
 
