@@ -31,7 +31,7 @@ export default function RootLayout({
             <SiteFooter />
           </div>
         </ThemeProvider>
-        <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
+        <GoogleAnalytics measurementId="G-PC9RJ9QKCS" />
       </body>
     </html>
   )
