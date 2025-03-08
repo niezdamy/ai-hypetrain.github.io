@@ -8,6 +8,8 @@ try {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  basePath: "/ai-hypetrain.github.io",
+  assetPrefix: "/ai-hypetrain.github.io/",
   eslint: {
     ignoreDuringBuilds: true,
   },
