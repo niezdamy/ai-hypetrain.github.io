@@ -44,5 +44,22 @@
   "language": {
     "en": "English",
     "pl": "Polish"
+  },
+  "Blog": {
+    "title": "Blog",
+    "readMore": "Read More"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "description": "Have questions or want to discuss a project? Fill out the form below and we'll get back to you as soon as possible.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Your email address",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this regarding?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "submitButton": "Send Message"
   }
 }

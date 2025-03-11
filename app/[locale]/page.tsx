@@ -8,37 +8,44 @@ import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { BlogPostCard } from "@/components/blog-post-card"
 import { StatsCounter } from "@/components/stats-counter"
+import { type Post } from "@/lib/posts"
 
 export default function Home() {
   const t = useTranslations();
   
   // Sample blog posts data
-  const blogPosts = [
+  const blogPosts: (Post & { timeSpent: string; cost: string; income: string; imageUrl: string })[] = [
     {
-      id: 1,
+      id: "1",
       title: "Exploring GPT-4's Capabilities for Content Creation",
       excerpt: "A deep dive into using GPT-4 for generating blog content and how it compares to previous models.",
       date: "2023-11-15",
+      content: "Full content of the post...",
+      slug: "exploring-gpt4-capabilities",
       timeSpent: "8 hours",
       cost: "$20",
       income: "$0",
       imageUrl: "/placeholder.svg?height=200&width=400",
     },
     {
-      id: 2,
+      id: "2",
       title: "Building a Custom ChatBot with Anthropic's Claude",
       excerpt: "How I built a specialized customer service chatbot using Claude and integrated it with my website.",
       date: "2023-12-02",
+      content: "Full content of the post...",
+      slug: "building-custom-chatbot-claude",
       timeSpent: "12 hours",
       cost: "$35",
       income: "$150",
       imageUrl: "/placeholder.svg?height=200&width=400",
     },
     {
-      id: 3,
+      id: "3",
       title: "Image Generation with Midjourney: A Month-Long Experiment",
       excerpt: "My experience using Midjourney for a month to create marketing materials and the results it produced.",
       date: "2024-01-10",
+      content: "Full content of the post...",
+      slug: "image-generation-midjourney",
       timeSpent: "20 hours",
       cost: "$50",
       income: "$300",

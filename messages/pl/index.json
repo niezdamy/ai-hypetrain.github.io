@@ -44,5 +44,22 @@
   "language": {
     "en": "Angielski",
     "pl": "Polski"
+  },
+  "Blog": {
+    "title": "Blog",
+    "readMore": "Czytaj więcej"
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "description": "Masz pytania lub chcesz omówić projekt? Wypełnij poniższy formularz, a my odezwiemy się do Ciebie jak najszybciej.",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Twój adres email",
+    "subjectLabel": "Temat",
+    "subjectPlaceholder": "Czego dotyczy wiadomość?",
+    "messageLabel": "Wiadomość",
+    "messagePlaceholder": "Twoja wiadomość",
+    "submitButton": "Wyślij wiadomość"
   }
 }

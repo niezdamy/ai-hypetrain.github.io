@@ -30,7 +30,11 @@ async function getMessages(locale: string) {
 
 const inter = Inter({ subsets: ["latin"] })
 
-export default async function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  // In Next.js App Router, params are already resolved
+  // But we need to handle it as a promise to avoid the warning
+  const locale = params?.locale;
+  
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
 
