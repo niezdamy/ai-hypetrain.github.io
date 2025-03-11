@@ -1,0 +1,48 @@
+{
+  "navigation": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "AI Hypetrain",
+    "subtitle": "Documenting my journey through the world of AI tools, experiments, and projects",
+    "cta": "Explore Posts"
+  },
+  "stats": {
+    "title": "My AI Journey in Numbers",
+    "totalTime": "{totalHours} hours across {projectCount} projects",
+    "totalCost": "Invested in AI tools and services",
+    "totalIncome": "Generated from AI implementations"
+  },
+  "latestPosts": {
+    "title": "Latest Experiments",
+    "viewAll": "View All Posts"
+  },
+  "about": {
+    "title": "About AI Hypetrain",
+    "description1": "As a developer and DevOps professional, I created this blog to document my experiences with various AI tools and technologies. Each post details my projects, including time investment, costs, and any revenue generated.",
+    "description2": "My goal is to provide transparent insights into the practical applications of AI, helping others understand the real-world implications of these emerging technologies.",
+    "timeTracking": {
+      "title": "Time Tracking",
+      "description": "Detailed logs of hours spent on each AI experiment"
+    },
+    "costAnalysis": {
+      "title": "Cost Analysis",
+      "description": "Transparent breakdown of expenses for each project"
+    },
+    "revenueReports": {
+      "title": "Revenue Reports",
+      "description": "Income generated from AI implementations"
+    },
+    "cta": {
+      "text": "Need help implementing AI in your business?",
+      "button": "Let's Work Together"
+    }
+  },
+  "language": {
+    "en": "English",
+    "pl": "Polish"
+  }
+}

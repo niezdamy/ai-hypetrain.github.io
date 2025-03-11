@@ -1,0 +1,48 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "blog": "Blog",
+    "about": "O mnie",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "AI Hypetrain",
+    "subtitle": "Dokumentuję moją podróż przez świat narzędzi AI, eksperymentów i projektów",
+    "cta": "Przeglądaj posty"
+  },
+  "stats": {
+    "title": "Moja podróż z AI w liczbach",
+    "totalTime": "{totalHours} godzin w {projectCount} projektach",
+    "totalCost": "Zainwestowane w narzędzia i usługi AI",
+    "totalIncome": "Wygenerowane z wdrożeń AI"
+  },
+  "latestPosts": {
+    "title": "Najnowsze eksperymenty",
+    "viewAll": "Zobacz wszystkie posty"
+  },
+  "about": {
+    "title": "O AI Hypetrain",
+    "description1": "Jako programista i specjalista DevOps, stworzyłem tego bloga, aby dokumentować moje doświadczenia z różnymi narzędziami i technologiami AI. Każdy post szczegółowo opisuje moje projekty, w tym inwestycję czasową, koszty i wygenerowane przychody.",
+    "description2": "Moim celem jest zapewnienie przejrzystego wglądu w praktyczne zastosowania AI, pomagając innym zrozumieć rzeczywiste implikacje tych nowych technologii.",
+    "timeTracking": {
+      "title": "Śledzenie czasu",
+      "description": "Szczegółowe zapisy godzin spędzonych na każdym eksperymencie AI"
+    },
+    "costAnalysis": {
+      "title": "Analiza kosztów",
+      "description": "Przejrzysty podział wydatków dla każdego projektu"
+    },
+    "revenueReports": {
+      "title": "Raporty przychodów",
+      "description": "Dochód wygenerowany z wdrożeń AI"
+    },
+    "cta": {
+      "text": "Potrzebujesz pomocy we wdrażaniu AI w swojej firmie?",
+      "button": "Współpracujmy"
+    }
+  },
+  "language": {
+    "en": "Angielski",
+    "pl": "Polski"
+  }
+}

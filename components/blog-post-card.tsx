@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@/navigation"
 import Image from "next/image"
 import { Calendar, Clock, DollarSign, PiggyBank } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
