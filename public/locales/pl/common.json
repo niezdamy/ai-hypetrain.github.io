@@ -1,0 +1,10 @@
+{
+  "welcome": "Witamy w AI Hypetrain",
+  "description": "To jest polska wersja witryny.",
+  "navigation": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "contact": "Kontakt"
+  },
+  "language": "Język"
+}

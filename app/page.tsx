@@ -7,6 +7,7 @@ import { ArrowRight, Clock, DollarSign, PiggyBank } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { BlogPostCard } from "@/components/blog-post-card"
 import { StatsCounter } from "@/components/stats-counter"
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Home() {
   // Sample blog posts data
@@ -60,7 +61,7 @@ export default function Home() {
   }, 0)
 
   // Function to scroll to posts section
-  const scrollToPosts = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToPosts = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const element = document.getElementById("latest-posts")
     if (element) {
@@ -70,6 +71,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <LanguageSwitcher />
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/10 to-background">
         <div className="max-w-4xl mx-auto text-center">
@@ -170,4 +172,3 @@ export default function Home() {
     </div>
   )
 }
-

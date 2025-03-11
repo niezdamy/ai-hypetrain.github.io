@@ -1,0 +1,10 @@
+{
+  "welcome": "Welcome to AI Hypetrain",
+  "description": "This is the English version of the site.",
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "language": "Language"
+}
