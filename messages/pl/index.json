@@ -49,7 +49,20 @@
     "title": "Blog",
     "readMore": "Czytaj więcej"
   },
-  "Contact": {
+  "blogPost": {
+    "timeSpent": "Poświęcony czas",
+    "cost": "Koszt",
+    "income": "Przychód"
+  },
+  "statsCounter": {
+    "totalTimeInvested": "Całkowity poświęcony czas",
+    "acrossAllProjects": "We wszystkich projektach",
+    "totalInvestment": "Całkowita inwestycja",
+    "spentOnAiTools": "Wydane na narzędzia AI",
+    "totalRevenue": "Całkowity przychód",
+    "generatedFromProjects": "Wygenerowany z projektów"
+  },
+  "contact": {
     "title": "Kontakt",
     "description": "Masz pytania lub chcesz omówić projekt? Wypełnij poniższy formularz, a my odezwiemy się do Ciebie jak najszybciej.",
     "nameLabel": "Imię",
@@ -61,5 +74,43 @@
     "messageLabel": "Wiadomość",
     "messagePlaceholder": "Twoja wiadomość",
     "submitButton": "Wyślij wiadomość"
+  },
+  "footer": {
+    "description": "Dokumentuję moją podróż przez narzędzia i technologie AI, z przejrzystym wglądem w inwestycję czasową, koszty i rezultaty.",
+    "navigation": "Nawigacja",
+    "subscribe": "Subskrybuj",
+    "subscribeText": "Otrzymuj powiadomienia o nowych eksperymentach i spostrzeżeniach AI.",
+    "emailPlaceholder": "Wprowadź swój email",
+    "subscribeButton": "Subskrybuj",
+    "copyright": "Wszelkie prawa zastrzeżone.",
+    "socialLinks": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "blogPosts": {
+    "post1": {
+      "title": "Pierwsze kroki z narzędziami AI",
+      "excerpt": "Moje pierwsze doświadczenie z różnymi narzędziami AI i czego się z nich nauczyłem.",
+      "content": "To jest pełna treść postu...",
+      "tags": ["AI", "Dla początkujących", "Narzędzia"]
+    },
+    "post2": {
+      "title": "Analiza kosztów: ChatGPT vs Claude",
+      "excerpt": "Szczegółowe porównanie kosztów między ChatGPT od OpenAI a Claude od Anthropic.",
+      "content": "To jest pełna treść postu...",
+      "tags": ["Koszty", "ChatGPT", "Claude", "Porównanie"]
+    },
+    "post3": {
+      "title": "Budowanie strony internetowej wspieranej przez AI",
+      "excerpt": "Jak wykorzystałem AI do pomocy w projektowaniu i tworzeniu tej strony.",
+      "content": "To jest pełna treść postu...",
+      "tags": ["Tworzenie stron", "AI", "Design"]
+    }
+  },
+  "contactForm": {
+    "submitSuccess": "Twoja wiadomość została wysłana pomyślnie!",
+    "submitError": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie."
   }
 }

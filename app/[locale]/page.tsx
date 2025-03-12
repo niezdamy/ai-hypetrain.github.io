@@ -25,7 +25,7 @@ export default function Home() {
       timeSpent: "8 hours",
       cost: "$20",
       income: "$0",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/gpt4-content.svg",
     },
     {
       id: "2",
@@ -37,7 +37,7 @@ export default function Home() {
       timeSpent: "12 hours",
       cost: "$35",
       income: "$150",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/claude-chatbot.svg",
     },
     {
       id: "3",
@@ -49,7 +49,7 @@ export default function Home() {
       timeSpent: "20 hours",
       cost: "$50",
       income: "$300",
-      imageUrl: "/placeholder.svg?height=200&width=400",
+      imageUrl: "/images/midjourney-experiment.svg",
     },
   ]
 

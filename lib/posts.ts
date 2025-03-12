@@ -8,6 +8,10 @@ export interface Post {
   slug: string;
   coverImage?: string;
   tags?: string[];
+  timeSpent?: string;
+  cost?: string;
+  income?: string;
+  imageUrl?: string;
 }
 
 // Sample posts data
@@ -19,7 +23,7 @@ const posts: Post[] = [
     excerpt: 'My first experience with various AI tools and what I learned from them.',
     content: 'This is the full content of the post...',
     slug: 'getting-started-with-ai-tools',
-    coverImage: '/images/ai-tools.jpg',
+    coverImage: '/images/ai-tools.svg',
     tags: ['AI', 'Beginners', 'Tools']
   },
   {
@@ -29,7 +33,7 @@ const posts: Post[] = [
     excerpt: 'A detailed comparison of costs between OpenAI\'s ChatGPT and Anthropic\'s Claude.',
     content: 'This is the full content of the post...',
     slug: 'cost-analysis-chatgpt-vs-claude',
-    coverImage: '/images/cost-analysis.jpg',
+    coverImage: '/images/cost-analysis.svg',
     tags: ['Cost', 'ChatGPT', 'Claude', 'Comparison']
   },
   {
@@ -39,7 +43,7 @@ const posts: Post[] = [
     excerpt: 'How I used AI to help design and develop this website.',
     content: 'This is the full content of the post...',
     slug: 'building-ai-powered-website',
-    coverImage: '/images/ai-website.jpg',
+    coverImage: '/images/ai-website.svg',
     tags: ['Web Development', 'AI', 'Design']
   }
 ];
@@ -48,6 +52,12 @@ const posts: Post[] = [
 export async function getPosts(): Promise<Post[]> {
   // In a real application, this would fetch from an API or database
   return posts;
+}
+
+// Function to get a single post by slug
+export async function getPost(slug: string): Promise<Post | undefined> {
+  // In a real application, this would fetch from an API or database
+  return posts.find(post => post.slug === slug);
 }
 
 // Function to get a single post by ID

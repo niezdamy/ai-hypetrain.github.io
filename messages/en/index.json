@@ -49,7 +49,20 @@
     "title": "Blog",
     "readMore": "Read More"
   },
-  "Contact": {
+  "blogPost": {
+    "timeSpent": "Time Spent",
+    "cost": "Cost",
+    "income": "Income"
+  },
+  "statsCounter": {
+    "totalTimeInvested": "Total Time Invested",
+    "acrossAllProjects": "Across all projects",
+    "totalInvestment": "Total Investment",
+    "spentOnAiTools": "Spent on AI tools",
+    "totalRevenue": "Total Revenue",
+    "generatedFromProjects": "Generated from projects"
+  },
+  "contact": {
     "title": "Contact Us",
     "description": "Have questions or want to discuss a project? Fill out the form below and we'll get back to you as soon as possible.",
     "nameLabel": "Name",
@@ -61,5 +74,43 @@
     "messageLabel": "Message",
     "messagePlaceholder": "Your message",
     "submitButton": "Send Message"
+  },
+  "footer": {
+    "description": "Documenting my journey through AI tools and technologies, with transparent insights into time investment, costs, and results.",
+    "navigation": "Navigation",
+    "subscribe": "Subscribe",
+    "subscribeText": "Get notified about new AI experiments and insights.",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "copyright": "All rights reserved.",
+    "socialLinks": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "blogPosts": {
+    "post1": {
+      "title": "Getting Started with AI Tools",
+      "excerpt": "My first experience with various AI tools and what I learned from them.",
+      "content": "This is the full content of the post...",
+      "tags": ["AI", "Beginners", "Tools"]
+    },
+    "post2": {
+      "title": "Cost Analysis: ChatGPT vs Claude",
+      "excerpt": "A detailed comparison of costs between OpenAI's ChatGPT and Anthropic's Claude.",
+      "content": "This is the full content of the post...",
+      "tags": ["Cost", "ChatGPT", "Claude", "Comparison"]
+    },
+    "post3": {
+      "title": "Building an AI-Powered Website",
+      "excerpt": "How I used AI to help design and develop this website.",
+      "content": "This is the full content of the post...",
+      "tags": ["Web Development", "AI", "Design"]
+    }
+  },
+  "contactForm": {
+    "submitSuccess": "Your message has been sent successfully!",
+    "submitError": "There was an error sending your message. Please try again."
   }
 }
