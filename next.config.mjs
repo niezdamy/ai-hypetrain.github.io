@@ -11,6 +11,7 @@ const withNextIntl = createNextIntlPlugin('./app/i18n.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   basePath: process.env.NODE_ENV === 'development' ? '' : "/ai-hypetrain.github.io",
   assetPrefix: process.env.NODE_ENV === 'development' ? '' : "/ai-hypetrain.github.io/",
   eslint: {

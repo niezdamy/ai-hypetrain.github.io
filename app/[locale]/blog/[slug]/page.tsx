@@ -3,13 +3,30 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Calendar, Clock, DollarSign, PiggyBank } from 'lucide-react'
-import { getPost } from '@/lib/posts'
+import { getPost, getPosts } from '@/lib/posts'
 
 interface BlogPostPageProps {
   params: {
     slug: string
     locale: string
   }
+}
+
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  const locales = ['en', 'pl'] // From next-intl.config.js
+  
+  const paths = []
+  for (const locale of locales) {
+    for (const post of posts) {
+      paths.push({
+        locale,
+        slug: post.slug
+      })
+    }
+  }
+
+  return paths
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
