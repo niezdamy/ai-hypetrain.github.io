@@ -5,6 +5,7 @@ import { LatestPostsSection } from "@/components/latest-posts-section"
 import { AboutSection } from "@/components/about-section"
 import { StatsCounterSection } from "@/components/stats-section"
 import { type Post } from "@/lib/posts"
+import { getAssetPath } from "@/lib/utils"
 
 export default function Home({ params: { locale } }: { params: { locale: string }}) {
   // Enable static rendering
@@ -24,7 +25,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       timeSpent: "8 hours",
       cost: "$20",
       income: "$0",
-      imageUrl: "/images/gpt4-content.svg",
+      imageUrl: getAssetPath("/images/gpt4-content.svg"),
     },
     {
       id: "2",
@@ -36,7 +37,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       timeSpent: "12 hours",
       cost: "$35",
       income: "$150",
-      imageUrl: "/images/claude-chatbot.svg",
+      imageUrl: getAssetPath("/images/claude-chatbot.svg"),
     },
     {
       id: "3",
@@ -48,7 +49,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
       timeSpent: "20 hours",
       cost: "$50",
       income: "$300",
-      imageUrl: "/images/midjourney-experiment.svg",
+      imageUrl: getAssetPath("/images/midjourney-experiment.svg"),
     },
   ]
 
