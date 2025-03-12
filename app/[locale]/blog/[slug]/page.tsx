@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Calendar, Clock, DollarSign, PiggyBank } from 'lucide-react'
 import { getPost, getPosts } from '@/lib/posts'
+import { getAssetPath } from '@/lib/utils'
 
 interface BlogPostPageProps {
   params: {
@@ -80,7 +81,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {post.coverImage && (
           <div className="relative h-[400px] w-full mb-8">
             <Image 
-              src={post.coverImage} 
+              src={getAssetPath(post.coverImage)} 
               alt={post.title} 
               fill 
               className="object-cover rounded-lg" 

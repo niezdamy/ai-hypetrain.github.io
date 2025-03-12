@@ -4,6 +4,7 @@ import { Calendar, Clock, DollarSign, PiggyBank } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Post } from "@/lib/posts"
 import { useTranslations } from "next-intl"
+import { getAssetPath } from "@/lib/utils"
 
 // Extend the Post type with optional blog-specific fields
 interface BlogPost extends Post {
@@ -22,7 +23,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Card className="h-full flex flex-col hover:shadow-md transition-shadow">
       <div className="relative h-48 w-full">
-        <Image src={post.imageUrl || post.coverImage || "/placeholder.svg"} alt={post.title} fill className="object-cover rounded-t-lg" />
+        <Image src={post.imageUrl || (post.coverImage ? getAssetPath(post.coverImage) : getAssetPath("/placeholder.svg"))} alt={post.title} fill className="object-cover rounded-t-lg" />
       </div>
       <CardHeader className="pb-2">
         <div className="flex items-center text-sm text-muted-foreground mb-2">
