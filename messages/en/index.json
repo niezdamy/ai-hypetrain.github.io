@@ -22,8 +22,11 @@
   },
   "about": {
     "title": "About AI Hypetrain",
+    "subtitle": "Tracking my AI journey with transparent insights and real-world results",
+    "greeting": "Hello, I'm the creator of AI Hypetrain",
     "description1": "As a developer and DevOps professional, I created this blog to document my experiences with various AI tools and technologies. Each post details my projects, including time investment, costs, and any revenue generated.",
     "description2": "My goal is to provide transparent insights into the practical applications of AI, helping others understand the real-world implications of these emerging technologies.",
+    "email": "Email me",
     "timeTracking": {
       "title": "Time Tracking",
       "description": "Detailed logs of hours spent on each AI experiment"
@@ -36,8 +39,27 @@
       "title": "Revenue Reports",
       "description": "Income generated from AI implementations"
     },
+    "expertise": {
+      "title": "My Expertise",
+      "development": {
+        "title": "Development"
+      },
+      "ai": {
+        "title": "AI Technologies",
+        "imageGen": "Image Gen",
+        "voiceAi": "Voice AI"
+      },
+      "devops": {
+        "title": "DevOps"
+      }
+    },
+    "timeline": {
+      "title": "My AI Journey",
+      "description": "A chronological look at my experiments and projects with AI technologies"
+    },
     "cta": {
       "text": "Need help implementing AI in your business?",
+      "description": "I'm available for consulting and project work to help you leverage AI technologies effectively.",
       "button": "Let's Work Together"
     }
   },
@@ -112,5 +134,11 @@
   "contactForm": {
     "submitSuccess": "Your message has been sent successfully!",
     "submitError": "There was an error sending your message. Please try again."
+  },
+  "projectTimeline": {
+    "readCaseStudy": "Read Case Study",
+    "timeSpent": "Time Spent",
+    "cost": "Cost",
+    "income": "Income"
   }
 }

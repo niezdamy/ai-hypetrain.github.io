@@ -22,8 +22,11 @@
   },
   "about": {
     "title": "O AI Hypetrain",
+    "subtitle": "Śledzę moją podróż z AI z przejrzystymi spostrzeżeniami i rzeczywistymi wynikami",
+    "greeting": "Cześć, jestem twórcą AI Hypetrain",
     "description1": "Jako programista i specjalista DevOps, stworzyłem tego bloga, aby dokumentować moje doświadczenia z różnymi narzędziami i technologiami AI. Każdy post szczegółowo opisuje moje projekty, w tym inwestycję czasową, koszty i wygenerowane przychody.",
     "description2": "Moim celem jest zapewnienie przejrzystego wglądu w praktyczne zastosowania AI, pomagając innym zrozumieć rzeczywiste implikacje tych nowych technologii.",
+    "email": "Napisz do mnie",
     "timeTracking": {
       "title": "Śledzenie czasu",
       "description": "Szczegółowe zapisy godzin spędzonych na każdym eksperymencie AI"
@@ -36,8 +39,27 @@
       "title": "Raporty przychodów",
       "description": "Dochód wygenerowany z wdrożeń AI"
     },
+    "expertise": {
+      "title": "Moja specjalizacja",
+      "development": {
+        "title": "Programowanie"
+      },
+      "ai": {
+        "title": "Technologie AI",
+        "imageGen": "Generowanie obrazów",
+        "voiceAi": "AI głosowe"
+      },
+      "devops": {
+        "title": "DevOps"
+      }
+    },
+    "timeline": {
+      "title": "Moja podróż z AI",
+      "description": "Chronologiczne spojrzenie na moje eksperymenty i projekty z technologiami AI"
+    },
     "cta": {
       "text": "Potrzebujesz pomocy we wdrażaniu AI w swojej firmie?",
+      "description": "Jestem dostępny do konsultacji i pracy projektowej, aby pomóc Ci efektywnie wykorzystać technologie AI.",
       "button": "Współpracujmy"
     }
   },
@@ -112,5 +134,11 @@
   "contactForm": {
     "submitSuccess": "Twoja wiadomość została wysłana pomyślnie!",
     "submitError": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie."
+  },
+  "projectTimeline": {
+    "readCaseStudy": "Przeczytaj studium przypadku",
+    "timeSpent": "Poświęcony czas",
+    "cost": "Koszt",
+    "income": "Przychód"
   }
 }
