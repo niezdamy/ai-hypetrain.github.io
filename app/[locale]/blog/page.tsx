@@ -3,7 +3,18 @@ import { getTranslations } from 'next-intl/server'
 import { BlogPostCard } from '@/components/blog-post-card'
 import { getPosts, type Post } from '@/lib/posts'
 
-export default async function BlogPage() {
+import { unstable_setRequestLocale } from 'next-intl/server';
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'pl' }];
+}
+
+export default async function BlogPage({
+  params: { locale }
+}: {
+  params: { locale: 'en' | 'pl' }
+}) {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations('Blog')
   const commonT = await getTranslations()
   const posts = await getPosts()

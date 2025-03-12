@@ -8,7 +8,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { ProjectTimeline } from "@/components/project-timeline"
 
-export default async function AboutPage() {
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'pl' }]
+}
+
+import { unstable_setRequestLocale } from 'next-intl/server';
+
+export default async function AboutPage({ params: { locale } }: { params: { locale: 'en' | 'pl' } }) {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations()
 
   // Sample projects data with start dates - in a real app, this would come from a database or API

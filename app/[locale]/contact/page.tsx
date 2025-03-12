@@ -1,7 +1,18 @@
 import React from 'react'
 import { getTranslations } from 'next-intl/server'
 
-export default async function ContactPage() {
+import { unstable_setRequestLocale } from 'next-intl/server';
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'pl' }];
+}
+
+export default async function ContactPage({
+  params: { locale }
+}: {
+  params: { locale: 'en' | 'pl' }
+}) {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations()
 
   return (
