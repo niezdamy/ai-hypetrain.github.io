@@ -1,16 +1,15 @@
-"use client"
-
-import type React from "react"
-
-import { Link } from "@/navigation"
-import { ArrowRight, Clock, DollarSign, PiggyBank } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { Button } from "@/components/ui/button"
-import { BlogPostCard } from "@/components/blog-post-card"
-import { StatsCounter } from "@/components/stats-counter"
+import { setRequestLocale } from "next-intl/server"
+import { HeroSection } from "@/components/hero-section"
+import { LatestPostsSection } from "@/components/latest-posts-section"
+import { AboutSection } from "@/components/about-section"
+import { StatsCounterSection } from "@/components/stats-section"
 import { type Post } from "@/lib/posts"
 
-export default function Home() {
+export default function Home({ params: { locale } }: { params: { locale: string }}) {
+  // Enable static rendering
+  setRequestLocale(locale);
+  
   const t = useTranslations();
   
   // Sample blog posts data
@@ -69,113 +68,50 @@ export default function Home() {
     return sum + income
   }, 0)
 
-  // Function to scroll to posts section
-  const scrollToPosts = () => {
-    const element = document.getElementById("latest-posts")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/10 to-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">{t('hero.title')}</h1>
-          <p className="mt-3 text-xl text-muted-foreground sm:mt-5">
-            {t('hero.subtitle')}
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <a href="#latest-posts" onClick={(e) => {
-                  e.preventDefault();
-                  scrollToPosts();
-                }}>
-                {t('hero.cta')} <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSection 
+        title={t('hero.title')} 
+        subtitle={t('hero.subtitle')} 
+        ctaText={t('hero.cta')}
+      />
 
       {/* Stats Counter Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">{t('stats.title')}</h2>
-          <StatsCounter
-            totalTime={t('stats.totalTime', { totalHours, projectCount: blogPosts.length })}
-            totalHours={totalHours}
-            totalCost={t('stats.totalCost')}
-            totalCostValue={totalCost}
-            totalIncome={t('stats.totalIncome')}
-            totalIncomeValue={totalIncome}
-          />
-        </div>
-      </section>
+      <StatsCounterSection
+        title={t('stats.title')}
+        totalTime={t('stats.totalTime', { totalHours, projectCount: blogPosts.length })}
+        totalHours={totalHours}
+        totalCost={t('stats.totalCost')}
+        totalCostValue={totalCost}
+        totalIncome={t('stats.totalIncome')}
+        totalIncomeValue={totalIncome}
+      />
 
       {/* Latest Posts Section */}
-      <section id="latest-posts" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-8">{t('latestPosts.title')}</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <BlogPostCard key={post.id} post={post} />
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Button variant="outline" asChild>
-              <Link href="/blog">
-                {t('latestPosts.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <LatestPostsSection 
+        title={t('latestPosts.title')}
+        viewAllText={t('latestPosts.viewAll')}
+        locale={locale}
+        blogPosts={blogPosts}
+      />
 
       {/* About Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-6">{t('about.title')}</h2>
-          <p className="text-lg text-muted-foreground mb-6">
-            {t('about.description1')}
-          </p>
-          <p className="text-lg text-muted-foreground">
-            {t('about.description2')}
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-card p-6 rounded-lg shadow-sm border">
-              <Clock className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-medium mb-2">{t('about.timeTracking.title')}</h3>
-              <p className="text-muted-foreground">{t('about.timeTracking.description')}</p>
-            </div>
-
-            <div className="bg-card p-6 rounded-lg shadow-sm border">
-              <DollarSign className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-medium mb-2">{t('about.costAnalysis.title')}</h3>
-              <p className="text-muted-foreground">{t('about.costAnalysis.description')}</p>
-            </div>
-
-            <div className="bg-card p-6 rounded-lg shadow-sm border">
-              <PiggyBank className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-medium mb-2">{t('about.revenueReports.title')}</h3>
-              <p className="text-muted-foreground">{t('about.revenueReports.description')}</p>
-            </div>
-          </div>
-
-          <div className="mt-10 text-center">
-            <p className="text-lg font-medium mb-4">{t('about.cta.text')}</p>
-            <Button asChild>
-              <Link href="/contact">
-                {t('about.cta.button')} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <AboutSection
+        title={t('about.title')}
+        description1={t('about.description1')}
+        description2={t('about.description2')}
+        timeTrackingTitle={t('about.timeTracking.title')}
+        timeTrackingDescription={t('about.timeTracking.description')}
+        costAnalysisTitle={t('about.costAnalysis.title')}
+        costAnalysisDescription={t('about.costAnalysis.description')}
+        revenueReportsTitle={t('about.revenueReports.title')}
+        revenueReportsDescription={t('about.revenueReports.description')}
+        ctaText={t('about.cta.text')}
+        ctaButtonText={t('about.cta.button')}
+        contactPath="/contact"
+        locale={locale}
+      />
     </div>
   )
 }

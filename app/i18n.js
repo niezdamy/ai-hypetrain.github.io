@@ -7,9 +7,8 @@ export default getRequestConfig(async ({locale}) => {
   
   return {
     messages,
-    timeZone: 'Europe/Warsaw',
-    // Return the locale explicitly as recommended in next-intl 3.22+
-    locale
+    timeZone: 'Europe/Warsaw'
+    // Removed deprecated locale parameter
   };
 });
 

@@ -1,9 +1,12 @@
 import React from 'react'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { BlogPostCard } from '@/components/blog-post-card'
 import { getPosts, type Post } from '@/lib/posts'
 
-export default async function BlogPage() {
+export default async function BlogPage({ params: { locale } }: { params: { locale: string } }) {
+  // Set the locale for this request - enables static rendering
+  setRequestLocale(locale)
+  
   const t = await getTranslations('Blog')
   const commonT = await getTranslations()
   const posts = await getPosts()

@@ -1,5 +1,5 @@
 import React from 'react'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Calendar, Clock, DollarSign, PiggyBank } from 'lucide-react'
@@ -13,6 +13,9 @@ interface BlogPostPageProps {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  // Set the locale for this request - enables static rendering
+  setRequestLocale(params.locale)
+  
   const t = await getTranslations()
   const blogT = await getTranslations('Blog')
   const post = await getPost(params.slug)
