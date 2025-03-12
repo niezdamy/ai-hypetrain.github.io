@@ -5,11 +5,14 @@ try {
   // ignore error
 }
 
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./app/i18n.js');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  basePath: "/ai-hypetrain.github.io",
-  assetPrefix: "/ai-hypetrain.github.io/",
+  basePath: process.env.NODE_ENV === 'development' ? '' : "/ai-hypetrain.github.io",
+  assetPrefix: process.env.NODE_ENV === 'development' ? '' : "/ai-hypetrain.github.io/",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -48,4 +51,4 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
-export default nextConfig
+export default withNextIntl(nextConfig)

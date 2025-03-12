@@ -1,0 +1,144 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "blog": "Blog",
+    "about": "O mnie",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "AI Hypetrain",
+    "subtitle": "Dokumentuję moją podróż przez świat narzędzi AI, eksperymentów i projektów",
+    "cta": "Przeglądaj posty"
+  },
+  "stats": {
+    "title": "Moja podróż z AI w liczbach",
+    "totalTime": "{totalHours} godzin w {projectCount} projektach",
+    "totalCost": "Zainwestowane w narzędzia i usługi AI",
+    "totalIncome": "Wygenerowane z wdrożeń AI"
+  },
+  "latestPosts": {
+    "title": "Najnowsze eksperymenty",
+    "viewAll": "Zobacz wszystkie posty"
+  },
+  "about": {
+    "title": "O AI Hypetrain",
+    "subtitle": "Śledzę moją podróż z AI z przejrzystymi spostrzeżeniami i rzeczywistymi wynikami",
+    "greeting": "Cześć, jestem twórcą AI Hypetrain",
+    "description1": "Jako programista i specjalista DevOps, stworzyłem tego bloga, aby dokumentować moje doświadczenia z różnymi narzędziami i technologiami AI. Każdy post szczegółowo opisuje moje projekty, w tym inwestycję czasową, koszty i wygenerowane przychody.",
+    "description2": "Moim celem jest zapewnienie przejrzystego wglądu w praktyczne zastosowania AI, pomagając innym zrozumieć rzeczywiste implikacje tych nowych technologii.",
+    "email": "Napisz do mnie",
+    "timeTracking": {
+      "title": "Śledzenie czasu",
+      "description": "Szczegółowe zapisy godzin spędzonych na każdym eksperymencie AI"
+    },
+    "costAnalysis": {
+      "title": "Analiza kosztów",
+      "description": "Przejrzysty podział wydatków dla każdego projektu"
+    },
+    "revenueReports": {
+      "title": "Raporty przychodów",
+      "description": "Dochód wygenerowany z wdrożeń AI"
+    },
+    "expertise": {
+      "title": "Moja specjalizacja",
+      "development": {
+        "title": "Programowanie"
+      },
+      "ai": {
+        "title": "Technologie AI",
+        "imageGen": "Generowanie obrazów",
+        "voiceAi": "AI głosowe"
+      },
+      "devops": {
+        "title": "DevOps"
+      }
+    },
+    "timeline": {
+      "title": "Moja podróż z AI",
+      "description": "Chronologiczne spojrzenie na moje eksperymenty i projekty z technologiami AI"
+    },
+    "cta": {
+      "text": "Potrzebujesz pomocy we wdrażaniu AI w swojej firmie?",
+      "description": "Jestem dostępny do konsultacji i pracy projektowej, aby pomóc Ci efektywnie wykorzystać technologie AI.",
+      "button": "Współpracujmy"
+    }
+  },
+  "language": {
+    "en": "Angielski",
+    "pl": "Polski"
+  },
+  "Blog": {
+    "title": "Blog",
+    "readMore": "Czytaj więcej"
+  },
+  "blogPost": {
+    "timeSpent": "Poświęcony czas",
+    "cost": "Koszt",
+    "income": "Przychód"
+  },
+  "statsCounter": {
+    "totalTimeInvested": "Całkowity poświęcony czas",
+    "acrossAllProjects": "We wszystkich projektach",
+    "totalInvestment": "Całkowita inwestycja",
+    "spentOnAiTools": "Wydane na narzędzia AI",
+    "totalRevenue": "Całkowity przychód",
+    "generatedFromProjects": "Wygenerowany z projektów"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Masz pytania lub chcesz omówić projekt? Wypełnij poniższy formularz, a my odezwiemy się do Ciebie jak najszybciej.",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Twój adres email",
+    "subjectLabel": "Temat",
+    "subjectPlaceholder": "Czego dotyczy wiadomość?",
+    "messageLabel": "Wiadomość",
+    "messagePlaceholder": "Twoja wiadomość",
+    "submitButton": "Wyślij wiadomość"
+  },
+  "footer": {
+    "description": "Dokumentuję moją podróż przez narzędzia i technologie AI, z przejrzystym wglądem w inwestycję czasową, koszty i rezultaty.",
+    "navigation": "Nawigacja",
+    "subscribe": "Subskrybuj",
+    "subscribeText": "Otrzymuj powiadomienia o nowych eksperymentach i spostrzeżeniach AI.",
+    "emailPlaceholder": "Wprowadź swój email",
+    "subscribeButton": "Subskrybuj",
+    "copyright": "Wszelkie prawa zastrzeżone.",
+    "socialLinks": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "blogPosts": {
+    "post1": {
+      "title": "Pierwsze kroki z narzędziami AI",
+      "excerpt": "Moje pierwsze doświadczenie z różnymi narzędziami AI i czego się z nich nauczyłem.",
+      "content": "To jest pełna treść postu...",
+      "tags": ["AI", "Dla początkujących", "Narzędzia"]
+    },
+    "post2": {
+      "title": "Analiza kosztów: ChatGPT vs Claude",
+      "excerpt": "Szczegółowe porównanie kosztów między ChatGPT od OpenAI a Claude od Anthropic.",
+      "content": "To jest pełna treść postu...",
+      "tags": ["Koszty", "ChatGPT", "Claude", "Porównanie"]
+    },
+    "post3": {
+      "title": "Budowanie strony internetowej wspieranej przez AI",
+      "excerpt": "Jak wykorzystałem AI do pomocy w projektowaniu i tworzeniu tej strony.",
+      "content": "To jest pełna treść postu...",
+      "tags": ["Tworzenie stron", "AI", "Design"]
+    }
+  },
+  "contactForm": {
+    "submitSuccess": "Twoja wiadomość została wysłana pomyślnie!",
+    "submitError": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie."
+  },
+  "projectTimeline": {
+    "readCaseStudy": "Przeczytaj studium przypadku",
+    "timeSpent": "Poświęcony czas",
+    "cost": "Koszt",
+    "income": "Przychód"
+  }
+}

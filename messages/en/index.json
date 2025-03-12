@@ -1,0 +1,144 @@
+{
+  "navigation": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "AI Hypetrain",
+    "subtitle": "Documenting my journey through the world of AI tools, experiments, and projects",
+    "cta": "Explore Posts"
+  },
+  "stats": {
+    "title": "My AI Journey in Numbers",
+    "totalTime": "{totalHours} hours across {projectCount} projects",
+    "totalCost": "Invested in AI tools and services",
+    "totalIncome": "Generated from AI implementations"
+  },
+  "latestPosts": {
+    "title": "Latest Experiments",
+    "viewAll": "View All Posts"
+  },
+  "about": {
+    "title": "About AI Hypetrain",
+    "subtitle": "Tracking my AI journey with transparent insights and real-world results",
+    "greeting": "Hello, I'm the creator of AI Hypetrain",
+    "description1": "As a developer and DevOps professional, I created this blog to document my experiences with various AI tools and technologies. Each post details my projects, including time investment, costs, and any revenue generated.",
+    "description2": "My goal is to provide transparent insights into the practical applications of AI, helping others understand the real-world implications of these emerging technologies.",
+    "email": "Email me",
+    "timeTracking": {
+      "title": "Time Tracking",
+      "description": "Detailed logs of hours spent on each AI experiment"
+    },
+    "costAnalysis": {
+      "title": "Cost Analysis",
+      "description": "Transparent breakdown of expenses for each project"
+    },
+    "revenueReports": {
+      "title": "Revenue Reports",
+      "description": "Income generated from AI implementations"
+    },
+    "expertise": {
+      "title": "My Expertise",
+      "development": {
+        "title": "Development"
+      },
+      "ai": {
+        "title": "AI Technologies",
+        "imageGen": "Image Gen",
+        "voiceAi": "Voice AI"
+      },
+      "devops": {
+        "title": "DevOps"
+      }
+    },
+    "timeline": {
+      "title": "My AI Journey",
+      "description": "A chronological look at my experiments and projects with AI technologies"
+    },
+    "cta": {
+      "text": "Need help implementing AI in your business?",
+      "description": "I'm available for consulting and project work to help you leverage AI technologies effectively.",
+      "button": "Let's Work Together"
+    }
+  },
+  "language": {
+    "en": "English",
+    "pl": "Polish"
+  },
+  "Blog": {
+    "title": "Blog",
+    "readMore": "Read More"
+  },
+  "blogPost": {
+    "timeSpent": "Time Spent",
+    "cost": "Cost",
+    "income": "Income"
+  },
+  "statsCounter": {
+    "totalTimeInvested": "Total Time Invested",
+    "acrossAllProjects": "Across all projects",
+    "totalInvestment": "Total Investment",
+    "spentOnAiTools": "Spent on AI tools",
+    "totalRevenue": "Total Revenue",
+    "generatedFromProjects": "Generated from projects"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have questions or want to discuss a project? Fill out the form below and we'll get back to you as soon as possible.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Your email address",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this regarding?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "submitButton": "Send Message"
+  },
+  "footer": {
+    "description": "Documenting my journey through AI tools and technologies, with transparent insights into time investment, costs, and results.",
+    "navigation": "Navigation",
+    "subscribe": "Subscribe",
+    "subscribeText": "Get notified about new AI experiments and insights.",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "copyright": "All rights reserved.",
+    "socialLinks": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "blogPosts": {
+    "post1": {
+      "title": "Getting Started with AI Tools",
+      "excerpt": "My first experience with various AI tools and what I learned from them.",
+      "content": "This is the full content of the post...",
+      "tags": ["AI", "Beginners", "Tools"]
+    },
+    "post2": {
+      "title": "Cost Analysis: ChatGPT vs Claude",
+      "excerpt": "A detailed comparison of costs between OpenAI's ChatGPT and Anthropic's Claude.",
+      "content": "This is the full content of the post...",
+      "tags": ["Cost", "ChatGPT", "Claude", "Comparison"]
+    },
+    "post3": {
+      "title": "Building an AI-Powered Website",
+      "excerpt": "How I used AI to help design and develop this website.",
+      "content": "This is the full content of the post...",
+      "tags": ["Web Development", "AI", "Design"]
+    }
+  },
+  "contactForm": {
+    "submitSuccess": "Your message has been sent successfully!",
+    "submitError": "There was an error sending your message. Please try again."
+  },
+  "projectTimeline": {
+    "readCaseStudy": "Read Case Study",
+    "timeSpent": "Time Spent",
+    "cost": "Cost",
+    "income": "Income"
+  }
+}

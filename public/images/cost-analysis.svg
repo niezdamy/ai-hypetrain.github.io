@@ -1,0 +1,23 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f0f4f8"/>
+  <rect x="50" y="50" width="700" height="300" rx="15" fill="#e2e8f0" stroke="#cbd5e0" stroke-width="2"/>
+  
+  <!-- Bar chart -->
+  <rect x="200" y="250" width="100" height="80" fill="#4299e1" opacity="0.8"/>
+  <rect x="350" y="200" width="100" height="130" fill="#805ad5" opacity="0.8"/>
+  <rect x="500" y="150" width="100" height="180" fill="#f56565" opacity="0.8"/>
+  
+  <!-- Labels -->
+  <text x="250" y="350" font-family="Arial" font-size="16" text-anchor="middle" fill="#2d3748">ChatGPT</text>
+  <text x="400" y="350" font-family="Arial" font-size="16" text-anchor="middle" fill="#2d3748">Claude</text>
+  <text x="550" y="350" font-family="Arial" font-size="16" text-anchor="middle" fill="#2d3748">Other</text>
+  
+  <!-- Title -->
+  <text x="400" y="100" font-family="Arial" font-size="24" text-anchor="middle" fill="#2d3748">Cost Analysis</text>
+  <text x="400" y="130" font-family="Arial" font-size="18" text-anchor="middle" fill="#4a5568">ChatGPT vs Claude</text>
+  
+  <!-- Dollar signs -->
+  <text x="250" y="235" font-family="Arial" font-size="20" text-anchor="middle" fill="#2d3748">$</text>
+  <text x="400" y="185" font-family="Arial" font-size="20" text-anchor="middle" fill="#2d3748">$$</text>
+  <text x="550" y="135" font-family="Arial" font-size="20" text-anchor="middle" fill="#2d3748">$$$</text>
+</svg>
