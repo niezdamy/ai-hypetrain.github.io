@@ -2,13 +2,16 @@ import React from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail, Twitter, Clock, DollarSign, PiggyBank } from "lucide-react"
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { ProjectTimeline } from "@/components/project-timeline"
 
-export default async function AboutPage() {
+export default async function AboutPage({ params: { locale } }: { params: { locale: string } }) {
+  // Set the locale for this request - enables static rendering
+  setRequestLocale(locale)
+  
   const t = await getTranslations()
 
   // Sample projects data with start dates - in a real app, this would come from a database or API

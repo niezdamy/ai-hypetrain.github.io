@@ -1,8 +1,11 @@
 import React from 'react'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-export default async function KontaktPage() {
-  const t = await getTranslations('Contact')
+export default async function KontaktPage({ params: { locale } }: { params: { locale: string } }) {
+  // Set the locale for this request - enables static rendering
+  setRequestLocale(locale)
+  
+  const t = await getTranslations('contact')
 
   return (
     <div className="container py-8 md:py-12">
