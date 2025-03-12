@@ -4,6 +4,7 @@ try {
 } catch (e) {
   // ignore error
 }
+import fs from 'fs';
 
 import createNextIntlPlugin from 'next-intl/plugin';
 
@@ -51,4 +52,4 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
-export default withNextIntl(nextConfig)
+export default fs.existsSync('./app/i18n.js') ? withNextIntl(nextConfig) : nextConfig;

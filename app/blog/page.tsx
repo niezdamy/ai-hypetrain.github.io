@@ -1,16 +1,24 @@
 import type { Metadata } from "next"
 import { BlogPostCard } from "@/components/blog-post-card"
+import { setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Blog | AI Hypetrain",
   description: "Explore all AI experiments and projects",
 }
 
-export default function BlogPage() {
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'pl' }];
+}
+
+export const dynamic = 'force-static';
+
+export default async function BlogPage({ params }: { params: { locale: string } }) {
+  setRequestLocale(params.locale);
   // Sample blog posts data (expanded from home page)
   const blogPosts = [
     {
-      id: 1,
+      id: "1",
       title: "Exploring GPT-4's Capabilities for Content Creation",
       excerpt: "A deep dive into using GPT-4 for generating blog content and how it compares to previous models.",
       date: "2023-11-15",
@@ -18,9 +26,11 @@ export default function BlogPage() {
       cost: "$20",
       income: "$0",
       imageUrl: "/placeholder.svg?height=200&width=400",
+      slug: "exploring-gpt-4s-capabilities-for-content-creation",
+      content: ""
     },
     {
-      id: 2,
+      id: "2",
       title: "Building a Custom ChatBot with Anthropic's Claude",
       excerpt: "How I built a specialized customer service chatbot using Claude and integrated it with my website.",
       date: "2023-12-02",
@@ -28,9 +38,11 @@ export default function BlogPage() {
       cost: "$35",
       income: "$150",
       imageUrl: "/placeholder.svg?height=200&width=400",
+      slug: "building-a-custom-chatbot-with-anthropics-claude",
+      content: ""
     },
     {
-      id: 3,
+      id: "3",
       title: "Image Generation with Midjourney: A Month-Long Experiment",
       excerpt: "My experience using Midjourney for a month to create marketing materials and the results it produced.",
       date: "2024-01-10",
@@ -38,9 +50,11 @@ export default function BlogPage() {
       cost: "$50",
       income: "$300",
       imageUrl: "/placeholder.svg?height=200&width=400",
+      slug: "image-generation-with-midjourney-a-month-long-experiment",
+      content: ""
     },
     {
-      id: 4,
+      id: "4",
       title: "Fine-tuning LLMs for Specialized Industry Knowledge",
       excerpt: "My journey fine-tuning a language model for the healthcare industry and the challenges I faced.",
       date: "2024-01-25",
@@ -48,9 +62,11 @@ export default function BlogPage() {
       cost: "$200",
       income: "$0",
       imageUrl: "/placeholder.svg?height=200&width=400",
+      slug: "fine-tuning-llms-for-specialized-industry-knowledge",
+      content: ""
     },
     {
-      id: 5,
+      id: "5",
       title: "AI-Powered Code Generation: A Developer's Perspective",
       excerpt: "Testing various code generation tools and evaluating their effectiveness for real-world projects.",
       date: "2024-02-08",
@@ -58,9 +74,11 @@ export default function BlogPage() {
       cost: "$30",
       income: "$0",
       imageUrl: "/placeholder.svg?height=200&width=400",
+      slug: "ai-powered-code-generation-a-developers-perspective",
+      content: ""
     },
     {
-      id: 6,
+      id: "6",
       title: "Creating a Voice Assistant with Whisper and ElevenLabs",
       excerpt:
         "Building a custom voice assistant by combining OpenAI's Whisper for transcription and ElevenLabs for voice synthesis.",
@@ -69,6 +87,8 @@ export default function BlogPage() {
       cost: "$75",
       income: "$200",
       imageUrl: "/placeholder.svg?height=200&width=400",
+      slug: "creating-a-voice-assistant-with-whisper-and-elevenlabs",
+      content: ""
     },
   ]
 
