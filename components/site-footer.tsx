@@ -53,6 +53,11 @@ export function SiteFooter() {
                   {t('navigation.contact')}
                 </Link>
               </li>
+              <li>
+                <Link href="/costs" className="text-sm text-muted-foreground hover:text-foreground">
+                  {t('navigation.costs')}
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

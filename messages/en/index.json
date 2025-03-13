@@ -3,7 +3,8 @@
     "home": "Home",
     "blog": "Blog",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "costs": "AI Costs"
   },
   "hero": {
     "title": "AI Hypetrain",
@@ -134,6 +135,15 @@
   "contactForm": {
     "submitSuccess": "Your message has been sent successfully!",
     "submitError": "There was an error sending your message. Please try again."
+  },
+  "Costs": {
+    "title": "AI Tools Cost Summary",
+    "description": "A detailed breakdown of my expenditures on AI tools and services, along with my satisfaction rating for each one.",
+    "totalCosts": "Total Expenditure",
+    "totalCostsDescription": "Total amount spent on AI tools and services to date",
+    "averageSatisfaction": "Average Satisfaction",
+    "averageSatisfactionDescription": "My overall satisfaction with AI tool investments",
+    "allCosts": "All Expenditures"
   },
   "projectTimeline": {
     "readCaseStudy": "Read Case Study",
