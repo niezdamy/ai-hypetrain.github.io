@@ -37,6 +37,30 @@ function formatDate(dateString: string) {
 export function createColumns(locale: string): ColumnDef<Cost>[] {
   return [
   {
+    id: "index",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          #
+          {column.getIsSorted() === "asc" ? (
+            <ArrowUp className="ml-2 h-4 w-4" />
+          ) : column.getIsSorted() === "desc" ? (
+            <ArrowDown className="ml-2 h-4 w-4" />
+          ) : (
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          )}
+        </Button>
+      )
+    },
+    cell: ({ row }) => {
+      // Use the row index + 1 to display the row number
+      return <div className="text-center font-medium">{row.index + 1}</div>
+    },
+  },
+  {
     accessorKey: "date",
     header: ({ column }) => {
       return (
@@ -121,7 +145,25 @@ export function createColumns(locale: string): ColumnDef<Cost>[] {
     accessorKey: "comment",
     header: ({ column }) => locale === 'pl' ? 'Komentarz' : 'Comment',
     cell: ({ row }) => {
-      return <div className="max-w-[300px] truncate" title={row.getValue("comment")}>{row.getValue("comment")}</div>
+      // Translate the comments for Polish locale
+      let comment = row.getValue("comment") as string;
+      if (locale === 'pl') {
+        // Basic translations for sample data. In a real app, this would come from translation files
+        const translations: Record<string, string> = {
+          "Great tool for writing!":                 "Świetne narzędzie do pisania!",
+          "Expensive but worth it":                 "Drogie, ale warte swojej ceny",
+          "Limited capabilities":                   "Ograniczone możliwości",
+          "Amazing for code generation":            "Niesamowite do generowania kodu",
+          "Waste of money":                         "Strata pieniędzy",
+          "Helpful for brainstorming":              "Pomocne przy burzy mózgów",
+          "Good overall experience":                "Dobre ogólne wrażenia",
+          "Loved the UI and experience":            "Świetny interfejs i wrażenia",
+          "Too complex for everyday use":           "Zbyt złożone do codziennego użytku",
+          "Exactly what I needed":                  "Dokładnie to, czego potrzebowałem"
+        };
+        comment = translations[comment] || comment;
+      }
+      return <div className="max-w-[300px] truncate" title={comment}>{comment}</div>
     },
   },
   {

@@ -149,7 +149,8 @@
     "noResults": "No results found.",
     "showingRecords": "Showing {from} to {to} of {total} records",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "rowsPerPage": "Rows per page"
   },
   "projectTimeline": {
     "readCaseStudy": "Read Case Study",

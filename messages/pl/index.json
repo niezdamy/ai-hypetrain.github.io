@@ -149,7 +149,8 @@
     "noResults": "Nie znaleziono wyników.",
     "showingRecords": "Wyświetlanie od {from} do {to} z {total} rekordów",
     "previous": "Poprzednia",
-    "next": "Następna"
+    "next": "Następna",
+    "rowsPerPage": "Wierszy na stronę"
   },
   "projectTimeline": {
     "readCaseStudy": "Przeczytaj studium przypadku",

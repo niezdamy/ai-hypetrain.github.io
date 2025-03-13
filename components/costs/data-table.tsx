@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ChevronsUpDown } from "lucide-react"
 
 import {
   DropdownMenu,
@@ -31,6 +31,13 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { useTranslations } from "next-intl"
 
 interface DataTableProps<TData, TValue> {
@@ -76,6 +83,9 @@ export function DataTable<TData, TValue>({
     },
   })
 
+  // Define available page sizes
+  const pageSizeOptions = [5, 10, 15, 20, 25, 50]
+  
   return (
     <div className="w-full">
       <div className="flex items-center py-4 justify-between">
@@ -169,7 +179,25 @@ export function DataTable<TData, TValue>({
             total: table.getFilteredRowModel().rows.length 
           })}
         </div>
-        <div className="space-x-2">
+        <div className="flex items-center space-x-2">
+          <p className="text-sm font-medium">{t("rowsPerPage")}:</p>
+          <Select
+            value={`${table.getState().pagination.pageSize}`}
+            onValueChange={(value) => {
+              table.setPageSize(Number(value))
+            }}
+          >
+            <SelectTrigger className="h-8 w-[70px]">
+              <SelectValue placeholder={table.getState().pagination.pageSize} />
+            </SelectTrigger>
+            <SelectContent side="top">
+              {pageSizeOptions.map((pageSize) => (
+                <SelectItem key={pageSize} value={`${pageSize}`}>
+                  {pageSize}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           <Button
             variant="outline"
             size="sm"
