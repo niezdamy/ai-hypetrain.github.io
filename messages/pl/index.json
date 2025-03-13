@@ -3,7 +3,8 @@
     "home": "Strona główna",
     "blog": "Blog",
     "about": "O mnie",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "costs": "Koszty AI"
   },
   "hero": {
     "title": "AI Hypetrain",
@@ -134,6 +135,22 @@
   "contactForm": {
     "submitSuccess": "Twoja wiadomość została wysłana pomyślnie!",
     "submitError": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie."
+  },
+  "Costs": {
+    "title": "Podsumowanie kosztów narzędzi AI",
+    "description": "Szczegółowe zestawienie moich wydatków na narzędzia i usługi AI, wraz z oceną satysfakcji z każdego z nich.",
+    "totalCosts": "Łączne wydatki",
+    "totalCostsDescription": "Całkowita kwota wydana na narzędzia i usługi AI do dnia dzisiejszego",
+    "averageSatisfaction": "Średnia satysfakcja",
+    "averageSatisfactionDescription": "Moje ogólne zadowolenie z inwestycji w narzędzia AI",
+    "allCosts": "Wszystkie wydatki",
+    "searchCosts": "Szukaj wydatków...",
+    "columns": "Kolumny",
+    "noResults": "Nie znaleziono wyników.",
+    "showingRecords": "Wyświetlanie od {from} do {to} z {total} rekordów",
+    "previous": "Poprzednia",
+    "next": "Następna",
+    "rowsPerPage": "Wierszy na stronę"
   },
   "projectTimeline": {
     "readCaseStudy": "Przeczytaj studium przypadku",
