@@ -143,7 +143,13 @@
     "totalCostsDescription": "Total amount spent on AI tools and services to date",
     "averageSatisfaction": "Average Satisfaction",
     "averageSatisfactionDescription": "My overall satisfaction with AI tool investments",
-    "allCosts": "All Expenditures"
+    "allCosts": "All Expenditures",
+    "searchCosts": "Search expenses...",
+    "columns": "Columns",
+    "noResults": "No results found.",
+    "showingRecords": "Showing {from} to {to} of {total} records",
+    "previous": "Previous",
+    "next": "Next"
   },
   "projectTimeline": {
     "readCaseStudy": "Read Case Study",

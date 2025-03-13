@@ -143,7 +143,13 @@
     "totalCostsDescription": "Całkowita kwota wydana na narzędzia i usługi AI do dnia dzisiejszego",
     "averageSatisfaction": "Średnia satysfakcja",
     "averageSatisfactionDescription": "Moje ogólne zadowolenie z inwestycji w narzędzia AI",
-    "allCosts": "Wszystkie wydatki"
+    "allCosts": "Wszystkie wydatki",
+    "searchCosts": "Szukaj wydatków...",
+    "columns": "Kolumny",
+    "noResults": "Nie znaleziono wyników.",
+    "showingRecords": "Wyświetlanie od {from} do {to} z {total} rekordów",
+    "previous": "Poprzednia",
+    "next": "Następna"
   },
   "projectTimeline": {
     "readCaseStudy": "Przeczytaj studium przypadku",

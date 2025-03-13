@@ -1,8 +1,8 @@
 import { DollarSign, TrendingUp } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getCosts, getTotalCost, getAverageSatisfaction } from "@/lib/costs";
-import { CostItem } from "@/components/cost-item";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CostsTable } from "@/components/costs/costs-table";
 
 interface CostsPageProps {
   params: {
@@ -68,11 +68,11 @@ export default async function CostsPage({ params: { locale } }: CostsPageProps) 
       </div>
       
       <h2 className="text-2xl font-bold mb-6">{t("allCosts")}</h2>
-      <div className="space-y-4">
-        {sortedCosts.map((cost) => (
-          <CostItem key={cost.id} cost={cost} locale={locale} />
-        ))}
-      </div>
+      <CostsTable 
+        data={sortedCosts} 
+        locale={locale}
+        searchPlaceholder={t("searchCosts")}
+      />
     </div>
   );
 }
