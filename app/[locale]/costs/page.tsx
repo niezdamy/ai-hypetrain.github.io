@@ -2,7 +2,7 @@ import { DollarSign, TrendingUp } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getCosts, getTotalCost, getAverageSatisfaction } from "@/lib/costs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CostsTable } from "@/components/costs/costs-table";
+import { CostsClientWrapper } from "@/components/costs/costs-client-wrapper";
 
 interface CostsPageProps {
   params: {
@@ -15,12 +15,12 @@ export default async function CostsPage({ params: { locale } }: CostsPageProps) 
   setRequestLocale(locale);
   
   const t = await getTranslations("Costs");
-  const costs = await getCosts();
+  const initialCosts = await getCosts();
   const { total, currency } = await getTotalCost();
   const avgSatisfaction = await getAverageSatisfaction();
   
   // For demo purposes, we'll sort costs by date (newest first)
-  const sortedCosts = [...costs].sort(
+  const sortedCosts = [...initialCosts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -29,6 +29,7 @@ export default async function CostsPage({ params: { locale } }: CostsPageProps) 
       <h1 className="text-4xl font-bold mb-6">{t("title")}</h1>
       <p className="text-xl text-muted-foreground mb-8">{t("description")}</p>
       
+      {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         {/* Total Costs Card */}
         <Card>
@@ -67,9 +68,9 @@ export default async function CostsPage({ params: { locale } }: CostsPageProps) 
         </Card>
       </div>
       
-      <h2 className="text-2xl font-bold mb-6">{t("allCosts")}</h2>
-      <CostsTable 
-        data={sortedCosts} 
+      {/* Client-side costs table with add cost functionality */}
+      <CostsClientWrapper
+        initialCosts={sortedCosts}
         locale={locale}
         searchPlaceholder={t("searchCosts")}
       />
