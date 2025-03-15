@@ -9,7 +9,8 @@ export interface Cost {
 }
 
 // Sample costs data
-const costs: Cost[] = [
+// Using localStorage to persist costs between sessions when possible
+let costs: Cost[] = [
   {
     id: "1",
     date: "2023-10-15",
@@ -83,15 +84,71 @@ const costs: Cost[] = [
   }
 ];
 
+// Load costs from localStorage if available (client-side only)
+function tryLoadCostsFromStorage() {
+  if (typeof window !== 'undefined') {
+    try {
+      const storedCosts = localStorage.getItem('ai-hypetrain-costs');
+      if (storedCosts) {
+        costs = JSON.parse(storedCosts);
+      }
+    } catch (error) {
+      console.error('Failed to load costs from localStorage:', error);
+    }
+  }
+}
+
+// Save costs to localStorage (client-side only)
+function trySaveCostsToStorage() {
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem('ai-hypetrain-costs', JSON.stringify(costs));
+    } catch (error) {
+      console.error('Failed to save costs to localStorage:', error);
+    }
+  }
+}
+
+// Initialize on module load
+tryLoadCostsFromStorage();
+
 // Function to get all costs
 export async function getCosts(): Promise<Cost[]> {
   // In a real application, you might fetch this from an API or database
+  tryLoadCostsFromStorage(); // Refresh from storage if available
   return costs;
 }
 
 // Function to get a single cost by ID
 export async function getCostById(id: string): Promise<Cost | undefined> {
+  tryLoadCostsFromStorage(); // Refresh from storage if available
   return costs.find(cost => cost.id === id);
+}
+
+// Function to add a new cost
+export async function addCost(cost: Omit<Cost, 'id'>): Promise<Cost> {
+  // Generate a unique ID
+  const newCost: Cost = {
+    ...cost,
+    id: Date.now().toString(),
+  };
+  
+  costs = [newCost, ...costs];
+  trySaveCostsToStorage();
+  return newCost;
+}
+
+// Function to delete a cost by ID
+export async function deleteCost(id: string): Promise<boolean> {
+  const initialLength = costs.length;
+  costs = costs.filter(cost => cost.id !== id);
+  
+  const deleted = costs.length < initialLength;
+  if (deleted) {
+    trySaveCostsToStorage();
+  }
+  
+  return deleted;
 }
 
 // Function to calculate total cost

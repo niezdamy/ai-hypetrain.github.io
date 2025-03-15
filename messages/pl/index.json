@@ -150,7 +150,22 @@
     "showingRecords": "Wyświetlanie od {from} do {to} z {total} rekordów",
     "previous": "Poprzednia",
     "next": "Następna",
-    "rowsPerPage": "Wierszy na stronę"
+    "rowsPerPage": "Wierszy na stronę",
+    "addNewCost": "Dodaj nowy koszt",
+    "fillCostDetailsBelow": "Wypełnij poniższe szczegóły, aby dodać nowy koszt narzędzia AI.",
+    "namePlaceholder": "Nazwa narzędzia lub usługi AI",
+    "commentPlaceholder": "Notatki o Twoim doświadczeniu z tym narzędziem",
+    "relatedPostPlaceholder": "slug-powiazanego-postu",
+    "relatedPostDescription": "Opcjonalny link do wpisu na blogu o tym narzędziu",
+    "cancel": "Anuluj",
+    "addCost": "Dodaj koszt",
+    "satisfaction": {
+      "veryDissatisfied": "Bardzo niezadowolony",
+      "dissatisfied": "Niezadowolony",
+      "neutral": "Neutralnie",
+      "satisfied": "Zadowolony",
+      "verySatisfied": "Bardzo zadowolony"
+    }
   },
   "projectTimeline": {
     "readCaseStudy": "Przeczytaj studium przypadku",

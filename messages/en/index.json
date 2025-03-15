@@ -150,7 +150,22 @@
     "showingRecords": "Showing {from} to {to} of {total} records",
     "previous": "Previous",
     "next": "Next",
-    "rowsPerPage": "Rows per page"
+    "rowsPerPage": "Rows per page",
+    "addNewCost": "Add New Cost",
+    "fillCostDetailsBelow": "Fill in the details below to add a new AI tool cost.",
+    "namePlaceholder": "Name of AI tool or service",
+    "commentPlaceholder": "Notes about your experience with this tool",
+    "relatedPostPlaceholder": "slug-of-related-post",
+    "relatedPostDescription": "Optional link to a blog post about this tool",
+    "cancel": "Cancel",
+    "addCost": "Add Cost",
+    "satisfaction": {
+      "veryDissatisfied": "Very Dissatisfied",
+      "dissatisfied": "Dissatisfied",
+      "neutral": "Neutral",
+      "satisfied": "Satisfied",
+      "verySatisfied": "Very Satisfied"
+    }
   },
   "projectTimeline": {
     "readCaseStudy": "Read Case Study",
