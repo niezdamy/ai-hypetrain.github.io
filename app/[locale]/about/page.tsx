@@ -141,7 +141,7 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
                   </Link>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <Link href="mailto:contact@aihypetrain.com">
+                  <Link href="mailto:oskar.poprawski.dev@gmail.com">
                     <Mail className="h-5 w-5" />
                     <span className="sr-only">{t('about.email')}</span>
                   </Link>
@@ -261,8 +261,8 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
             {t('about.cta.description')}
           </p>
           <Button size="lg" asChild>
-            <Link href="/contact">
-              {t('about.cta.button')} <ArrowRight className="ml-2 h-4 w-4" />
+            <Link href="mailto:oskar.poprawski.dev@gmail.com">
+              {t('about.cta.button')} <Mail className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

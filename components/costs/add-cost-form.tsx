@@ -46,6 +46,7 @@ const costFormSchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, {
     message: "Date must be in YYYY-MM-DD format",
   }),
+  type: z.string().min(1, { message: "Type must be specified" }),
   comment: z.string().min(3, { message: "Comment must be at least 3 characters" }),
   satisfactionLevel: z.coerce.number().min(1).max(5),
   relatedPostSlug: z.string().optional(),
@@ -74,6 +75,7 @@ export function AddCostForm({ onCostAdded, locale }: AddCostFormProps) {
       name: "",
       amount: "",
       date: today,
+      type: "Monthly subscription",
       comment: "",
       satisfactionLevel: 3,
       relatedPostSlug: "",
@@ -166,6 +168,33 @@ export function AddCostForm({ onCostAdded, locale }: AddCostFormProps) {
                 )}
               />
             </div>
+            
+            <FormField
+              control={form.control}
+              name="type"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{locale === 'pl' ? 'Typ' : 'Type'}</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select cost type" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="Monthly subscription">{locale === 'pl' ? 'Subskrypcja miesięczna' : 'Monthly subscription'}</SelectItem>
+                      <SelectItem value="Token-based">{locale === 'pl' ? 'Opłata za tokeny' : 'Token-based'}</SelectItem>
+                      <SelectItem value="One-time purchase">{locale === 'pl' ? 'Zakup jednorazowy' : 'One-time purchase'}</SelectItem>
+                      <SelectItem value="Infrastructure">{locale === 'pl' ? 'Infrastruktura' : 'Infrastructure'}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             
             <FormField
               control={form.control}

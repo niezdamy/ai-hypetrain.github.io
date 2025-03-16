@@ -119,6 +119,40 @@ export function createColumns(locale: string): ColumnDef<Cost>[] {
     },
   },
   {
+    accessorKey: "type",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          {locale === 'pl' ? 'Typ' : 'Type'}
+          {column.getIsSorted() === "asc" ? (
+            <ArrowUp className="ml-2 h-4 w-4" />
+          ) : column.getIsSorted() === "desc" ? (
+            <ArrowDown className="ml-2 h-4 w-4" />
+          ) : (
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          )}
+        </Button>
+      )
+    },
+    cell: ({ row }) => {
+      // Translate the type for Polish locale if needed
+      let type = row.getValue("type") as string;
+      if (locale === 'pl') {
+        const translations: Record<string, string> = {
+          "Monthly subscription": "Subskrypcja miesięczna",
+          "Token-based": "Opłata za tokeny",
+          "One-time purchase": "Zakup jednorazowy",
+          "Infrastructure": "Infrastruktura"
+        };
+        type = translations[type] || type;
+      }
+      return <div>{type}</div>
+    },
+  },
+  {
     accessorKey: "amount",
     header: ({ column }) => {
       return (
