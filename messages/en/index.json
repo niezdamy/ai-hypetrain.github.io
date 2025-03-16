@@ -105,6 +105,7 @@
     "subscribeText": "Get notified about new AI experiments and insights.",
     "emailPlaceholder": "Enter your email",
     "subscribeButton": "Subscribe",
+    "staticSiteMessage": "Subscriptions are disabled in this static site version.",
     "copyright": "All rights reserved.",
     "socialLinks": {
       "twitter": "Twitter",

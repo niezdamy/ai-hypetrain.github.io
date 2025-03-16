@@ -49,11 +49,6 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">
-                  {t('navigation.contact')}
-                </Link>
-              </li>
-              <li>
                 <Link href="/costs" className="text-sm text-muted-foreground hover:text-foreground">
                   {t('navigation.costs')}
                 </Link>
@@ -63,19 +58,25 @@ export function SiteFooter() {
           <div>
             <h3 className="text-sm font-medium">{t('footer.subscribe')}</h3>
             <p className="mt-3 text-sm text-muted-foreground">{t('footer.subscribeText')}</p>
-            <form className="mt-3 flex flex-col space-y-2">
+            <div className="mt-3 flex flex-col space-y-2">
               <input
                 type="email"
                 placeholder={t('footer.emailPlaceholder')}
-                className="rounded-md border border-input bg-background px-3 py-2 text-sm"
+                className="rounded-md border border-input bg-background px-3 py-2 text-sm cursor-not-allowed opacity-70"
+                disabled
               />
               <button
-                type="submit"
-                className="rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                type="button"
+                className="rounded-md bg-primary/60 px-3 py-2 text-sm font-medium text-primary-foreground cursor-not-allowed"
+                disabled
+                title={t('footer.staticSiteMessage') || 'Coming soon'}
               >
                 {t('footer.subscribeButton')}
               </button>
-            </form>
+              <p className="text-xs text-muted-foreground italic">
+                {t('footer.staticSiteMessage') || 'Subscriptions are disabled in this static site version.'}
+              </p>
+            </div>
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">

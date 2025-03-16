@@ -27,9 +27,6 @@ export function SiteHeader() {
             <Link href="/about" className="text-sm font-medium transition-colors hover:text-primary">
               {t('about')}
             </Link>
-            <Link href="/contact" className="text-sm font-medium transition-colors hover:text-primary">
-              {t('contact')}
-            </Link>
             <Link href="/costs" className="text-sm font-medium transition-colors hover:text-primary">
               {t('costs')}
             </Link>
@@ -56,9 +53,6 @@ export function SiteHeader() {
                 </Link>
                 <Link href="/costs" className="text-sm font-medium transition-colors hover:text-primary">
                   {t('costs')}
-                </Link>
-                <Link href="/contact" className="text-sm font-medium transition-colors hover:text-primary">
-                  {t('contact')}
                 </Link>
               </nav>
             </SheetContent>
