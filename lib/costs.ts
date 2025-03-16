@@ -4,6 +4,7 @@ export interface Cost {
   name: string;
   amount: string;
   comment: string;
+  type: string; // Type of transaction (monthly, tokens, one-time, etc.)
   satisfactionLevel: number; // 1-5 stars
   relatedPostSlug?: string; // Optional link to a related blog post
 }
@@ -12,11 +13,21 @@ export interface Cost {
 // Using localStorage to persist costs between sessions when possible
 let costs: Cost[] = [
   {
+    id: "11",
+    date: "2025-03-16",
+    name: "AI Hypetrain Domain Purchase",
+    amount: "$15",
+    comment: "Annual domain registration for ai-hypetrain.com",
+    type: "One-time purchase",
+    satisfactionLevel: 5
+  },
+  {
     id: "1",
     date: "2023-10-15",
     name: "ChatGPT Plus Subscription",
     amount: "$20",
     comment: "Monthly subscription for ChatGPT Plus. Access to GPT-4 and plugins.",
+    type: "Monthly subscription",
     satisfactionLevel: 4,
     relatedPostSlug: "exploring-gpt4-capabilities"
   },
@@ -26,6 +37,7 @@ let costs: Cost[] = [
     name: "Anthropic Claude Pro",
     amount: "$20",
     comment: "Monthly subscription for Claude Pro. Used for building a customer service chatbot.",
+    type: "Monthly subscription",
     satisfactionLevel: 5,
     relatedPostSlug: "building-custom-chatbot-claude"
   },
@@ -35,6 +47,7 @@ let costs: Cost[] = [
     name: "Midjourney Subscription",
     amount: "$10",
     comment: "Basic plan for Midjourney. Used for generating marketing images.",
+    type: "Monthly subscription",
     satisfactionLevel: 3,
     relatedPostSlug: "image-generation-midjourney"
   },
@@ -44,6 +57,7 @@ let costs: Cost[] = [
     name: "ChatGPT Plus Subscription",
     amount: "$20",
     comment: "Second month of ChatGPT Plus. Still finding it very useful.",
+    type: "Monthly subscription",
     satisfactionLevel: 4
   },
   {
@@ -52,6 +66,7 @@ let costs: Cost[] = [
     name: "Windsurf IDE Pro",
     amount: "$29",
     comment: "Amazing IDE that integrates AI assistants directly into the coding workflow.",
+    type: "One-time purchase",
     satisfactionLevel: 5,
     relatedPostSlug: "building-ai-powered-website"
   },
@@ -61,6 +76,7 @@ let costs: Cost[] = [
     name: "Midjourney Standard Plan",
     amount: "$30",
     comment: "Upgraded to standard plan for faster generations and better quality.",
+    type: "Monthly subscription",
     satisfactionLevel: 4,
     relatedPostSlug: "image-generation-midjourney"
   },
@@ -70,6 +86,7 @@ let costs: Cost[] = [
     name: "Anthropic Claude Pro",
     amount: "$20",
     comment: "Renewed subscription for ongoing chatbot development.",
+    type: "Monthly subscription",
     satisfactionLevel: 4,
     relatedPostSlug: "building-custom-chatbot-claude"
   },
@@ -79,6 +96,7 @@ let costs: Cost[] = [
     name: "ChatGPT Plus Subscription",
     amount: "$20",
     comment: "Continuing to use for content creation and coding assistance.",
+    type: "Monthly subscription",
     satisfactionLevel: 4,
     relatedPostSlug: "exploring-gpt4-capabilities"
   }
