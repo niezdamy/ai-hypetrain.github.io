@@ -53,6 +53,11 @@ export function SiteFooter() {
                   {t('navigation.costs')}
                 </Link>
               </li>
+              <li>
+                <Link href="/ideas" className="text-sm text-muted-foreground hover:text-foreground">
+                  {t('navigation.ideas')}
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

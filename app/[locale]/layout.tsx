@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { locales } from '@/navigation';
 import { Inter } from "next/font/google"
+import { Metadata } from "next"
 import "../globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -15,6 +16,20 @@ interface LocaleLayoutProps {
     locale: string
   }
 }
+
+export const metadata: Metadata = {
+  title: "AI Hypetrain - Documenting AI Experiments",
+  description: "A personal blog documenting experiences with AI tools, including time spent, costs, and income generated.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: [
+      { url: "/apple-icon.png" }
+    ],
+  }
+};
 
 export async function generateStaticParams() {
   return locales.map(locale => ({ locale }));
