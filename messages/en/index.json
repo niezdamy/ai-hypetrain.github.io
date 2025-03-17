@@ -4,7 +4,8 @@
     "blog": "Blog",
     "about": "About",
     "contact": "Contact",
-    "costs": "AI Costs"
+    "costs": "AI Costs",
+    "ideas": "Project Board"
   },
   "hero": {
     "title": "AI Hypetrain",
@@ -173,5 +174,21 @@
     "timeSpent": "Time Spent",
     "cost": "Cost",
     "income": "Income"
+  },
+  "ideas": {
+    "title": "Ideas Tracking",
+    "subtitle": "Community-suggested ideas and feature requests for AI Hypetrain",
+    "boardTitle": "Project Board",
+    "submitIdea": "Have an idea for the site? Submit it on GitHub!",
+    "submitButton": "Submit New Idea",
+    "viewOnGitHub": "View on GitHub",
+    "createdOn": "Created on",
+    "todo": "To Do",
+    "inprogress": "In Progress",
+    "done": "Done",
+    "noItems": "No items in this category",
+    "errorMessage": "Please try refreshing or visit the GitHub project directly.",
+    "viewDirectly": "View Project on GitHub",
+    "disclaimer": "This board shows a snapshot of the GitHub project. For real-time updates, please visit the GitHub project directly."
   }
 }

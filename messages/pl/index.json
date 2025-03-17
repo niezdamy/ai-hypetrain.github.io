@@ -4,7 +4,8 @@
     "blog": "Blog",
     "about": "O mnie",
     "contact": "Kontakt",
-    "costs": "Koszty AI"
+    "costs": "Koszty AI",
+    "ideas": "Tablica Projektów"
   },
   "hero": {
     "title": "AI Hypetrain",
@@ -173,5 +174,21 @@
     "timeSpent": "Poświęcony czas",
     "cost": "Koszt",
     "income": "Przychód"
+  },
+  "ideas": {
+    "title": "Śledzenie pomysłów",
+    "subtitle": "Pomysły i sugestie społeczności dotyczące AI Hypetrain",
+    "boardTitle": "Tablica projektowa",
+    "submitIdea": "Masz pomysł na stronę? Zgłoś go na GitHubie!",
+    "submitButton": "Zgłoś nowy pomysł",
+    "viewOnGitHub": "Zobacz na GitHubie",
+    "createdOn": "Utworzono",
+    "todo": "Do zrobienia",
+    "inprogress": "W trakcie",
+    "done": "Zakończone",
+    "noItems": "Brak elementów w tej kategorii",
+    "errorMessage": "Spróbuj odświeżyć stronę lub odwiedź projekt na GitHubie bezpośrednio.",
+    "viewDirectly": "Zobacz projekt na GitHubie",
+    "disclaimer": "Ta tablica pokazuje migawkę projektu GitHub. Aby uzyskać aktualne informacje, odwiedź projekt GitHub bezpośrednio."
   }
 }
