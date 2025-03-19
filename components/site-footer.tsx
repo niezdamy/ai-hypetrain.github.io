@@ -61,26 +61,14 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-medium">{t('footer.subscribe')}</h3>
-            <p className="mt-3 text-sm text-muted-foreground">{t('footer.subscribeText')}</p>
-            <div className="mt-3 flex flex-col space-y-2">
-              <input
-                type="email"
-                placeholder={t('footer.emailPlaceholder')}
-                className="rounded-md border border-input bg-background px-3 py-2 text-sm cursor-not-allowed opacity-70"
-                disabled
-              />
-              <button
-                type="button"
-                className="rounded-md bg-primary/60 px-3 py-2 text-sm font-medium text-primary-foreground cursor-not-allowed"
-                disabled
-                title={t('footer.staticSiteMessage') || 'Coming soon'}
-              >
-                {t('footer.subscribeButton')}
-              </button>
-              <p className="text-xs text-muted-foreground italic">
-                {t('footer.staticSiteMessage') || 'Subscriptions are disabled in this static site version.'}
-              </p>
+            <h3 className="text-sm font-medium">{t('about.cta.text')}</h3>
+            <p className="mt-3 text-sm text-muted-foreground">{t('about.cta.description')}</p>
+            <div className="mt-4">
+              <a
+                href="mailto:oskar.poprawski.dev@gmail.com"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+                {t('about.cta.button')}
+              </a>
             </div>
           </div>
         </div>

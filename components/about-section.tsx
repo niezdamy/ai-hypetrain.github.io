@@ -66,14 +66,7 @@ export function AboutSection({
           </div>
         </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-lg font-medium mb-4">{ctaText}</p>
-          <Button asChild>
-            <Link href={`/${locale}${contactPath}`} locale={locale}>
-              {ctaButtonText} <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+        {/* CTA section removed for consistency */}
       </div>
     </section>
   );
