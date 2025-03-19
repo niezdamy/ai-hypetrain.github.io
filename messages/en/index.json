@@ -102,10 +102,9 @@
   "footer": {
     "description": "Documenting my journey through AI tools and technologies, with transparent insights into time investment, costs, and results.",
     "navigation": "Navigation",
-    "subscribe": "Subscribe",
-    "subscribeText": "Get notified about new AI experiments and insights.",
-    "emailPlaceholder": "Enter your email",
-    "subscribeButton": "Subscribe",
+    "businessSupport": "Need help implementing AI in your business?",
+    "businessSupportText": "Leverage my expertise to integrate AI solutions that drive real results for your organization.",
+    "contactButton": "Email me",
     "staticSiteMessage": "Subscriptions are disabled in this static site version.",
     "copyright": "All rights reserved.",
     "socialLinks": {

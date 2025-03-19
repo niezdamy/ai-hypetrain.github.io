@@ -102,10 +102,9 @@
   "footer": {
     "description": "Dokumentuję moją podróż przez narzędzia i technologie AI, z przejrzystym wglądem w inwestycję czasową, koszty i rezultaty.",
     "navigation": "Nawigacja",
-    "subscribe": "Subskrybuj",
-    "subscribeText": "Otrzymuj powiadomienia o nowych eksperymentach i spostrzeżeniach AI.",
-    "emailPlaceholder": "Wprowadź swój email",
-    "subscribeButton": "Subskrybuj",
+    "businessSupport": "Potrzebujesz pomocy we wdrażaniu AI w swojej firmie?",
+    "businessSupportText": "Wykorzystaj moje doświadczenie, aby zintegrować rozwiązania AI, które przyniosą realne wyniki dla Twojej organizacji.",
+    "contactButton": "Napisz do mnie",
     "staticSiteMessage": "Subskrypcje są wyłączone w tej statycznej wersji strony.",
     "copyright": "Wszelkie prawa zastrzeżone.",
     "socialLinks": {
