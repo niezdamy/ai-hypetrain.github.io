@@ -1,0 +1,18 @@
+{
+  "name": "AI Hypetrain",
+  "short_name": "AI Hypetrain",
+  "description": "A personal blog documenting experiences with AI tools, including time spent, costs, and income generated.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1A1A",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr"
+}

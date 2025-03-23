@@ -6,6 +6,14 @@ import { AboutSection } from "@/components/about-section"
 import { StatsCounterSection } from "@/components/stats-section"
 import { type Post } from "@/lib/posts"
 import { getAssetPath } from "@/lib/utils"
+import { generateMetadata as generateSeoMetadata } from "@/lib/metadata"
+import { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const locale = params.locale;
+  const pageName = locale === 'pl' ? 'Strona główna' : 'Home';
+  return generateSeoMetadata(locale, pageName);
+}
 
 export default function Home({ params: { locale } }: { params: { locale: string }}) {
   // Enable static rendering
