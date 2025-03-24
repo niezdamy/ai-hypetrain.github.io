@@ -6,6 +6,7 @@ import { Link } from "@/navigation"
 import { Button } from "@/components/ui/button"
 import { Cost } from "@/lib/costs"
 import { useTranslations } from "next-intl"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 // A component to render satisfaction stars
 export function SatisfactionStars({ level }: { level: number }) {
@@ -184,20 +185,33 @@ export function createColumns(locale: string): ColumnDef<Cost>[] {
       if (locale === 'pl') {
         // Basic translations for sample data. In a real app, this would come from translation files
         const translations: Record<string, string> = {
-          "Great tool for writing!":                 "Świetne narzędzie do pisania!",
-          "Expensive but worth it":                 "Drogie, ale warte swojej ceny",
-          "Limited capabilities":                   "Ograniczone możliwości",
-          "Amazing for code generation":            "Niesamowite do generowania kodu",
-          "Waste of money":                         "Strata pieniędzy",
-          "Helpful for brainstorming":              "Pomocne przy burzy mózgów",
-          "Good overall experience":                "Dobre ogólne wrażenia",
-          "Loved the UI and experience":            "Świetny interfejs i wrażenia",
-          "Too complex for everyday use":           "Zbyt złożone do codziennego użytku",
-          "Exactly what I needed":                  "Dokładnie to, czego potrzebowałem"
+          "Great tool for writing!": "Świetne narzędzie do pisania!",
+          "Expensive but worth it": "Drogie, ale warte swojej ceny",
+          "Limited capabilities": "Ograniczone możliwości",
+          "Amazing for code generation": "Niesamowite do generowania kodu",
+          "Waste of money": "Strata pieniędzy",
+          "Helpful for brainstorming": "Pomocne przy burzy mózgów",
+          "Good overall experience": "Dobre ogólne wrażenia",
+          "Loved the UI and experience": "Świetny interfejs i wrażenia",
+          "Too complex for everyday use": "Zbyt złożone do codziennego użytku",
+          "Exactly what I needed": "Dokładnie to, czego potrzebowałem"
         };
         comment = translations[comment] || comment;
       }
-      return <div className="max-w-[300px] truncate" title={comment}>{comment}</div>
+      
+      // Use popover for comments to improve readability
+      return (
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="ghost" className="h-auto p-0 text-left font-normal w-full justify-start">
+              <div className="max-w-[300px] truncate" title={comment}>{comment}</div>
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-80 p-4">
+            <p>{comment}</p>
+          </PopoverContent>
+        </Popover>
+      )
     },
   },
   {
@@ -221,6 +235,11 @@ export function createColumns(locale: string): ColumnDef<Cost>[] {
     },
     cell: ({ row }) => {
       return <SatisfactionStars level={row.getValue("satisfactionLevel")} />
+    },
+    filterFn: (row, id, filterValue) => {
+      if (!filterValue || filterValue === "") return true;
+      const value = parseInt(filterValue, 10);
+      return row.getValue(id) === value;
     },
   },
 ];
