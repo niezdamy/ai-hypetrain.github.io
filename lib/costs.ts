@@ -102,8 +102,8 @@ export async function getTotalCost(): Promise<{ total: number; currency: string;
   return { 
     total, 
     currency: '$', 
-    timeSpent: 18, // 18 hours spent total
-    moneyEarned: 0 // $0 earned
+    timeSpent: costs.reduce((sum, cost) => sum + cost.timeSpent, 0), // Calculate total time spent
+    moneyEarned: costs.reduce((sum, cost) => sum + cost.moneyEarned, 0) // Calculate total money earned
   };
 }
 
