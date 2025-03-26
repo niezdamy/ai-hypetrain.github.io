@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useTranslations } from "next-intl"
-import { Cost } from "@/lib/costs"
+import { Cost, getTotalCost } from "@/lib/costs"
 
 interface CostsSummaryProps {
   costs: Cost[]
@@ -11,9 +11,20 @@ interface CostsSummaryProps {
 
 export function CostsSummary({ costs, locale }: CostsSummaryProps) {
   const t = useTranslations("Costs")
+  const [timeSpent, setTimeSpent] = React.useState<number>(0)
+  const [moneyEarned, setMoneyEarned] = React.useState<number>(0)
   
   // Calculate total spent
   const totalCost = costs.reduce((sum, cost) => sum + parseFloat(cost.amount.toString()), 0)
+  
+  React.useEffect(() => {
+    const loadExtraData = async () => {
+      const data = await getTotalCost()
+      setTimeSpent(data.timeSpent)
+      setMoneyEarned(data.moneyEarned)
+    }
+    loadExtraData()
+  }, [])
   
   // Calculate costs by type
   const costsByType = costs.reduce((acc, cost) => {
@@ -34,6 +45,14 @@ export function CostsSummary({ costs, locale }: CostsSummaryProps) {
         <div className="p-4 border rounded-lg shadow-sm bg-card">
           <h3 className="text-sm font-medium text-muted-foreground">{t("totalSpent")}</h3>
           <p className="text-2xl font-bold">{formatter.format(totalCost)}</p>
+        </div>
+        <div className="p-4 border rounded-lg shadow-sm bg-card">
+          <h3 className="text-sm font-medium text-muted-foreground">{t("timeSpent")}</h3>
+          <p className="text-2xl font-bold">{timeSpent}h</p>
+        </div>
+        <div className="p-4 border rounded-lg shadow-sm bg-card">
+          <h3 className="text-sm font-medium text-muted-foreground">{t("moneyEarned")}</h3>
+          <p className="text-2xl font-bold">{formatter.format(moneyEarned)}</p>
         </div>
         
         {/* Cost by type summary cards */}

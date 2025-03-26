@@ -115,22 +115,10 @@
   },
   "blogPosts": {
     "post1": {
-      "title": "Pierwsze kroki z narzędziami AI",
-      "excerpt": "Moje pierwsze doświadczenie z różnymi narzędziami AI i czego się z nich nauczyłem.",
+      "title": "Tworzenie strony z asystentem kodu AI",
+      "excerpt": "Moje doświadczenie z wykorzystaniem asystentów AI do zbudowania tej strony Next.js, w tym wyzwania związane z tłumaczeniami i obsługą dwóch języków.",
       "content": "To jest pełna treść postu...",
-      "tags": ["AI", "Dla początkujących", "Narzędzia"]
-    },
-    "post2": {
-      "title": "Analiza kosztów: ChatGPT vs Claude",
-      "excerpt": "Szczegółowe porównanie kosztów między ChatGPT od OpenAI a Claude od Anthropic.",
-      "content": "To jest pełna treść postu...",
-      "tags": ["Koszty", "ChatGPT", "Claude", "Porównanie"]
-    },
-    "post3": {
-      "title": "Budowanie strony internetowej wspieranej przez AI",
-      "excerpt": "Jak wykorzystałem AI do pomocy w projektowaniu i tworzeniu tej strony.",
-      "content": "To jest pełna treść postu...",
-      "tags": ["Tworzenie stron", "AI", "Design"]
+      "tags": ["Tworzenie stron", "AI", "Next.js", "Internacjonalizacja"]
     }
   },
   "contactForm": {
@@ -167,6 +155,8 @@
     "allTypes": "Wszystkie typy",
     "selectDateRange": "Wybierz zakres dat",
     "totalSpent": "Łącznie wydano",
+    "timeSpent": "Poświęcony czas",
+    "moneyEarned": "Zarobione pieniądze",
     "ofTotal": "z całości",
     "satisfaction": {
       "veryDissatisfied": "Bardzo niezadowolony",
