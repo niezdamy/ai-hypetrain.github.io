@@ -72,7 +72,7 @@ Overall, I'm satisfied with the result and look forward to continuing to track A
     slug: 'building-website-with-ai-code-assistant',
     coverImage: '/images/ai-website.svg',
     tags: ['Web Development', 'AI', 'Next.js', 'Internationalization'],
-    timeSpent: '18h',
+    timeSpent: 18,
     cost: '$15',
     income: '$0'
   }
