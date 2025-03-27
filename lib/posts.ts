@@ -14,37 +14,67 @@ export interface Post {
   imageUrl?: string;
 }
 
-// Sample posts data
+// Real blog post data
 const posts: Post[] = [
   {
     id: '1',
-    title: 'Getting Started with AI Tools',
-    date: '2023-06-15',
-    excerpt: 'My first experience with various AI tools and what I learned from them.',
-    content: 'This is the full content of the post...',
-    slug: 'getting-started-with-ai-tools',
-    coverImage: '/images/ai-tools.svg',
-    tags: ['AI', 'Beginners', 'Tools']
-  },
-  {
-    id: '2',
-    title: 'Cost Analysis: ChatGPT vs Claude',
-    date: '2023-07-22',
-    excerpt: 'A detailed comparison of costs between OpenAI\'s ChatGPT and Anthropic\'s Claude.',
-    content: 'This is the full content of the post...',
-    slug: 'cost-analysis-chatgpt-vs-claude',
-    coverImage: '/images/cost-analysis.svg',
-    tags: ['Cost', 'ChatGPT', 'Claude', 'Comparison']
-  },
-  {
-    id: '3',
-    title: 'Building an AI-Powered Website',
-    date: '2023-08-10',
-    excerpt: 'How I used AI to help design and develop this website.',
-    content: 'This is the full content of the post...',
-    slug: 'building-ai-powered-website',
+    title: 'Building Website with AI Code Assistant',
+    date: '2025-03-26',
+    excerpt: 'My experience using AI assistants to build this Next.js website, including the challenges with translations and dual language support.',
+    content: `# Building Website with AI Code Assistant
+
+Building this website turned out to be an interesting journey that took more time than I initially expected. As someone who wanted to explore the capabilities of AI code assistants, I decided to go all-in and use them to build my AI Hypetrain site from scratch.
+
+## The Tools I Used
+
+1. **V0** - I started with V0 to scaffold the initial Next.js project. It gave me a good foundation with a modern tech stack.
+
+2. **Windsurf IDE** - For the actual coding, I used Windsurf which gave me access to multiple AI models:
+   - Gemini 2.0 Flash
+   - DeepSeek R1
+   - GPT-4o
+   - GPT-4o-mini
+   - Claude 3.7 Sonnet
+
+## The Challenges
+
+While the coding assistance was generally helpful, I encountered several challenges:
+
+### Dual Language Support
+
+By far the most problematic aspect was implementing dual language support (English and Polish). The AI models often struggled with:
+
+- Properly implementing next-intl for internationalization
+- Maintaining consistent translation keys
+- Handling locale-specific routing
+
+After experimenting with various models, I found that Claude 3.7 Sonnet gave the best results for translation work. It seemed to have a better understanding of internationalization patterns and the Next.js framework's conventions.
+
+### Time Investment
+
+In total, I spent approximately 18 hours building this site. A significant portion of that time was spent correcting issues with the translations and ensuring the dual language support worked correctly.
+
+## The Costs
+
+My only direct expense was $15 for the Windsurf subscription. This gave me access to all the AI models I needed for development.
+
+## Was It Worth It?
+
+Despite taking longer than expected, building this site with AI assistance was a valuable learning experience. I gained insights into:
+
+- The strengths and limitations of various AI models
+- The current state of AI code generation
+- Where human expertise is still essential (especially for complex architectural decisions)
+
+If you're interested in exploring more, check out my [GitHub repository](https://github.com/niezdamy/ai-hypetrain.github.io) where you can see all the code and the history of how this project evolved.
+
+Overall, I'm satisfied with the result and look forward to continuing to track AI tools and their costs on this platform!`,
+    slug: 'building-website-with-ai-code-assistant',
     coverImage: '/images/ai-website.svg',
-    tags: ['Web Development', 'AI', 'Design']
+    tags: ['Web Development', 'AI', 'Next.js', 'Internationalization'],
+    timeSpent: 18,
+    cost: '$15',
+    income: '$0'
   }
 ];
 

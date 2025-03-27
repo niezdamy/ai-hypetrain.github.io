@@ -13,9 +13,7 @@ export default async function BlogPage({ params: { locale } }: { params: { local
   
   // Create a mapping for translated posts
   const postMapping: Record<string, string> = {
-    'getting-started-with-ai-tools': 'post1',
-    'cost-analysis-chatgpt-vs-claude': 'post2',
-    'building-ai-powered-website': 'post3'
+    'building-website-with-ai-code-assistant': 'post1'
   }
   
   // Create translated versions of the posts
