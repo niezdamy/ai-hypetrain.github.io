@@ -19,12 +19,40 @@ export function CostsSummary({ costs, locale }: CostsSummaryProps) {
   
   React.useEffect(() => {
     const loadExtraData = async () => {
-      const data = await getTotalCost()
-      setTimeSpent(data.timeSpent)
-      setMoneyEarned(data.moneyEarned)
+      try {
+        const data = await getTotalCost()
+        setTimeSpent(data.timeSpent)
+        setMoneyEarned(data.moneyEarned)
+      } catch (error) {
+        // Provide fallback values in case of error
+        console.error('Failed to load total cost data:', error)
+        // Calculate fallbacks from the costs prop if available
+        if (costs.length > 0) {
+          try {
+            // Try to calculate time spent from costs if available
+            const timeValue = costs.reduce((sum, cost) => {
+              const timeVal = typeof cost.timeSpent === 'number' ? cost.timeSpent : 0
+              return sum + timeVal
+            }, 0)
+            setTimeSpent(timeValue)
+            
+            // Try to calculate money earned if available
+            const earnedValue = costs.reduce((sum, cost) => {
+              const earnedVal = typeof cost.moneyEarned === 'number' ? cost.moneyEarned : 0
+              return sum + earnedVal
+            }, 0)
+            setMoneyEarned(earnedValue)
+          } catch (innerError) {
+            // If all else fails, use zero as default values
+            console.error('Failed to calculate fallback values:', innerError)
+            setTimeSpent(0)
+            setMoneyEarned(0)
+          }
+        }
+      }
     }
     loadExtraData()
-  }, [])
+  }, [costs])
   
   // Calculate costs by type
   const costsByType = costs.reduce((acc, cost) => {

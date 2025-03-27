@@ -7,6 +7,8 @@ export interface Cost {
   type: string; // Type of transaction (monthly, tokens, one-time, etc.)
   satisfactionLevel: number; // 1-5 stars
   relatedPostSlug?: string; // Optional link to a related blog post
+  timeSpent?: number; // Optional hours spent related to this cost
+  moneyEarned?: number; // Optional money earned related to this cost
 }
 
 // Real costs data based on user's input
@@ -102,8 +104,8 @@ export async function getTotalCost(): Promise<{ total: number; currency: string;
   return { 
     total, 
     currency: '$', 
-    timeSpent: costs.reduce((sum, cost) => sum + cost.timeSpent, 0), // Calculate total time spent
-    moneyEarned: costs.reduce((sum, cost) => sum + cost.moneyEarned, 0) // Calculate total money earned
+    timeSpent: costs.reduce((sum, cost) => sum + (cost.timeSpent || 0), 0), // Calculate total time spent with null check
+    moneyEarned: costs.reduce((sum, cost) => sum + (cost.moneyEarned || 0), 0) // Calculate total money earned with null check
   };
 }
 
